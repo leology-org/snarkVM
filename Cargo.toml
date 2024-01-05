@@ -147,6 +147,7 @@ parameters = [ "snarkvm-parameters" ]
 synthesizer = [ "snarkvm-synthesizer" ]
 utilities = [ "snarkvm-utilities" ]
 wasm = [ "snarkvm-wasm" ]
+minimal = [ "snarkvm-ledger/minimal" ]
 
 [dependencies.snarkvm-algorithms]
 path = "./algorithms"

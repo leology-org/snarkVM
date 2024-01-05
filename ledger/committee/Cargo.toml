@@ -30,6 +30,7 @@ wasm = [ "console/wasm" ]
 metrics = [ "dep:metrics" ]
 prop-tests = [ "rand", "rand_chacha", "test-strategy", "proptest", "anyhow" ]
 test-helpers = [ "prop-tests", "rand_distr" ]
+minimal = [ ]
 
 [dependencies.console]
 package = "snarkvm-console"
