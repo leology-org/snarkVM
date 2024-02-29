@@ -25,10 +25,7 @@ use ledger_query::Query;
 use ledger_store::{
     atomic_finalize,
     helpers::memory::{BlockMemory, FinalizeMemory},
-    BlockStore,
-    FinalizeMode,
-    FinalizeStorage,
-    FinalizeStore,
+    BlockStore, FinalizeMode, FinalizeStorage, FinalizeStore,
 };
 use synthesizer_program::{FinalizeGlobalState, FinalizeStoreTrait, Program};
 
@@ -1325,10 +1322,8 @@ fn test_unbond_delegator_as_validator() {
     bond_public(&process, &finalize_store, delegator_private_key, &validator_address_1, delegator_amount, rng).unwrap();
 
     // Ensure that unbonding a delegator as an open validator fails.
-    assert!(
-        unbond_delegator_as_validator(&process, &finalize_store, &validator_private_key_1, delegator_address, rng)
-            .is_err()
-    );
+    assert!(unbond_delegator_as_validator(&process, &finalize_store, &validator_private_key_1, delegator_address, rng)
+        .is_err());
 
     // Set the validator `is_open` state to `false`.
     set_validator_state(&process, &finalize_store, &validator_private_key_1, false, rng).unwrap();
@@ -1336,10 +1331,8 @@ fn test_unbond_delegator_as_validator() {
     /* Ensure unbonding a delegator for another closed validator fails. */
 
     // Ensure that unbonding a delegator as an open validator fails.
-    assert!(
-        unbond_delegator_as_validator(&process, &finalize_store, &validator_private_key_2, delegator_address, rng)
-            .is_err()
-    );
+    assert!(unbond_delegator_as_validator(&process, &finalize_store, &validator_private_key_2, delegator_address, rng)
+        .is_err());
 
     /* Ensure unbonding a delegator as a closed validator succeeds. */
 
@@ -1470,17 +1463,13 @@ fn test_bonding_to_closed_fails() {
 
     // Ensure that the validator can't bond additional stake.
     let validator_amount = 1_000_000_000_000u64;
-    assert!(
-        bond_public(&process, &finalize_store, validator_private_key, validator_address, validator_amount, rng)
-            .is_err()
-    );
+    assert!(bond_public(&process, &finalize_store, validator_private_key, validator_address, validator_amount, rng)
+        .is_err());
 
     // Ensure that delegators can't bond to the validator.
     let delegator_amount = 1_000_000u64;
-    assert!(
-        bond_public(&process, &finalize_store, delegator_private_key, validator_address, delegator_amount, rng)
-            .is_err()
-    );
+    assert!(bond_public(&process, &finalize_store, delegator_private_key, validator_address, delegator_amount, rng)
+        .is_err());
 }
 
 // Test cases:
