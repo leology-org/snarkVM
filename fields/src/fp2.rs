@@ -13,13 +13,7 @@
 // limitations under the License.
 
 use crate::{Field, LegendreSymbol, One, PrimeField, SquareRootField, Zero};
-use snarkvm_utilities::{
-    rand::Uniform,
-    serialize::{SerializationError, *},
-    FromBytes,
-    ToBits,
-    ToBytes,
-};
+use snarkvm_utilities::{rand::Uniform, serialize::*, FromBytes, ToBits, ToBytes};
 
 use rand::{
     distributions::{Distribution, Standard},

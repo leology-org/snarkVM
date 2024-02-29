@@ -13,7 +13,7 @@
 // limitations under the License.
 
 use crate::{fp6_3over2::*, Field, Fp2, Fp2Parameters, One, Zero};
-use snarkvm_utilities::{bititerator::BitIteratorBE, rand::Uniform, serialize::*, FromBytes, ToBits, ToBytes};
+use snarkvm_utilities::{bititerator::BitIteratorBE, rand::Uniform, serialize::*, ToBits};
 
 use rand::{
     distributions::{Distribution, Standard},
@@ -24,7 +24,7 @@ use std::{
     cmp::Ordering,
     fmt::Debug,
     hash::Hash,
-    io::{Read, Result as IoResult, Write},
+    io::Result as IoResult,
     ops::{Add, AddAssign, Div, DivAssign, Mul, MulAssign, Neg, Sub, SubAssign},
 };
 
@@ -427,7 +427,11 @@ impl<P: Fp12Parameters> Ord for Fp12<P> {
     #[inline(always)]
     fn cmp(&self, other: &Self) -> Ordering {
         let c1_cmp = self.c1.cmp(&other.c1);
-        if c1_cmp == Ordering::Equal { self.c0.cmp(&other.c0) } else { c1_cmp }
+        if c1_cmp == Ordering::Equal {
+            self.c0.cmp(&other.c0)
+        } else {
+            c1_cmp
+        }
     }
 }
 

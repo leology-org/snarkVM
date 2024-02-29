@@ -13,30 +13,17 @@
 // limitations under the License.
 
 use crate::{
-    impl_add_sub_from_field_ref,
-    impl_mul_div_from_field_ref,
-    FftField,
-    Field,
-    FieldError,
-    FieldParameters,
-    LegendreSymbol,
-    One,
-    PoseidonDefaultField,
-    PoseidonDefaultParameters,
-    PrimeField,
-    SquareRootField,
-    Zero,
+    FftField, Field, FieldError, FieldParameters, LegendreSymbol, One, PoseidonDefaultField, PoseidonDefaultParameters,
+    PrimeField, SquareRootField, Zero,
 };
 use snarkvm_utilities::{
     biginteger::{arithmetic as fa, BigInteger as _BigInteger, BigInteger384 as BigInteger},
     serialize::CanonicalDeserialize,
-    FromBytes,
-    ToBits,
-    ToBytes,
+    FromBytes, ToBits, ToBytes,
 };
 
 use std::{
-    cmp::{Ord, Ordering, PartialOrd},
+    cmp::Ordering,
     fmt::{Debug, Display, Formatter, Result as FmtResult},
     io::{Read, Result as IoResult, Write},
     marker::PhantomData,
@@ -224,12 +211,12 @@ impl<P: Fp384Parameters> Field for Fp384<P> {
                 |(t0, t1, t2, t3, t4, t5, mut t6), (a, b)| {
                     // Compute digit_j x row and accumulate into `u`.
                     let mut carry = 0;
-                    let t0 = fa::mac_with_carry(t0, a.0.0[j], b.0.0[0], &mut carry);
-                    let t1 = fa::mac_with_carry(t1, a.0.0[j], b.0.0[1], &mut carry);
-                    let t2 = fa::mac_with_carry(t2, a.0.0[j], b.0.0[2], &mut carry);
-                    let t3 = fa::mac_with_carry(t3, a.0.0[j], b.0.0[3], &mut carry);
-                    let t4 = fa::mac_with_carry(t4, a.0.0[j], b.0.0[4], &mut carry);
-                    let t5 = fa::mac_with_carry(t5, a.0.0[j], b.0.0[5], &mut carry);
+                    let t0 = fa::mac_with_carry(t0, a.0 .0[j], b.0 .0[0], &mut carry);
+                    let t1 = fa::mac_with_carry(t1, a.0 .0[j], b.0 .0[1], &mut carry);
+                    let t2 = fa::mac_with_carry(t2, a.0 .0[j], b.0 .0[2], &mut carry);
+                    let t3 = fa::mac_with_carry(t3, a.0 .0[j], b.0 .0[3], &mut carry);
+                    let t4 = fa::mac_with_carry(t4, a.0 .0[j], b.0 .0[4], &mut carry);
+                    let t5 = fa::mac_with_carry(t5, a.0 .0[j], b.0 .0[5], &mut carry);
                     let _ = fa::adc(&mut t6, 0, carry);
 
                     (t0, t1, t2, t3, t4, t5, t6)
@@ -392,7 +379,11 @@ impl<P: Fp384Parameters> Field for Fp384<P> {
                 }
             }
 
-            if u == one { Some(b) } else { Some(c) }
+            if u == one {
+                Some(b)
+            } else {
+                Some(c)
+            }
         }
     }
 
@@ -665,7 +656,11 @@ impl<P: Fp384Parameters> FromStr for Fp384<P> {
             }
         }
 
-        if !res.is_valid() { Err(FieldError::InvalidFieldElement) } else { Ok(res) }
+        if !res.is_valid() {
+            Err(FieldError::InvalidFieldElement)
+        } else {
+            Ok(res)
+        }
     }
 }
 

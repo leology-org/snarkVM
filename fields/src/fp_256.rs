@@ -13,30 +13,17 @@
 // limitations under the License.
 
 use crate::{
-    impl_add_sub_from_field_ref,
-    impl_mul_div_from_field_ref,
-    FftField,
-    Field,
-    FieldError,
-    FieldParameters,
-    LegendreSymbol,
-    One,
-    PoseidonDefaultField,
-    PoseidonDefaultParameters,
-    PrimeField,
-    SquareRootField,
-    Zero,
+    FftField, Field, FieldError, FieldParameters, LegendreSymbol, One, PoseidonDefaultField, PoseidonDefaultParameters,
+    PrimeField, SquareRootField, Zero,
 };
 use snarkvm_utilities::{
     biginteger::{arithmetic as fa, BigInteger as _BigInteger, BigInteger256 as BigInteger},
     serialize::CanonicalDeserialize,
-    FromBytes,
-    ToBits,
-    ToBytes,
+    FromBytes, ToBits, ToBytes,
 };
 
 use std::{
-    cmp::{Ord, Ordering, PartialOrd},
+    cmp::Ordering,
     fmt::{Debug, Display, Formatter, Result as FmtResult},
     io::{Read, Result as IoResult, Write},
     marker::PhantomData,
@@ -190,10 +177,10 @@ impl<P: Fp256Parameters> Field for Fp256<P> {
                 a.clone().zip(b.clone()).fold((u0, u1, u2, u3, 0), |(t0, t1, t2, t3, mut t4), (a, b)| {
                     // Compute digit_j x row and accumulate into `u`.
                     let mut carry = 0;
-                    let t0 = fa::mac_with_carry(t0, a.0.0[j], b.0.0[0], &mut carry);
-                    let t1 = fa::mac_with_carry(t1, a.0.0[j], b.0.0[1], &mut carry);
-                    let t2 = fa::mac_with_carry(t2, a.0.0[j], b.0.0[2], &mut carry);
-                    let t3 = fa::mac_with_carry(t3, a.0.0[j], b.0.0[3], &mut carry);
+                    let t0 = fa::mac_with_carry(t0, a.0 .0[j], b.0 .0[0], &mut carry);
+                    let t1 = fa::mac_with_carry(t1, a.0 .0[j], b.0 .0[1], &mut carry);
+                    let t2 = fa::mac_with_carry(t2, a.0 .0[j], b.0 .0[2], &mut carry);
+                    let t3 = fa::mac_with_carry(t3, a.0 .0[j], b.0 .0[3], &mut carry);
                     let _ = fa::adc(&mut t4, 0, carry);
 
                     (t0, t1, t2, t3, t4)
@@ -334,7 +321,11 @@ impl<P: Fp256Parameters> Field for Fp256<P> {
                 }
             }
 
-            if u == one { Some(b) } else { Some(c) }
+            if u == one {
+                Some(b)
+            } else {
+                Some(c)
+            }
         }
     }
 
@@ -648,7 +639,11 @@ impl<P: Fp256Parameters> FromStr for Fp256<P> {
             }
         }
 
-        if !res.is_valid() { Err(FieldError::InvalidFieldElement) } else { Ok(res) }
+        if !res.is_valid() {
+            Err(FieldError::InvalidFieldElement)
+        } else {
+            Ok(res)
+        }
     }
 }
 
