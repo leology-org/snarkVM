@@ -26,7 +26,11 @@ impl<E: Environment> Boolean<E> {
 
         // Compute `!(constant_bits_le < circuit_bits_le)`, equivalent to `constant_bits_le >= circuit_bits_le`.
         !constant_bits_le.iter().zip_eq(circuit_bits_le).fold(Boolean::constant(false), |rest_is_less, (this, that)| {
-            if *this { that.bitand(&rest_is_less) } else { that.bitor(&rest_is_less) }
+            if *this {
+                that.bitand(&rest_is_less)
+            } else {
+                that.bitor(&rest_is_less)
+            }
         })
     }
 

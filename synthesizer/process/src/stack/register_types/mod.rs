@@ -18,29 +18,12 @@ mod matches;
 use console::{
     network::prelude::*,
     program::{
-        Access,
-        ArrayType,
-        EntryType,
-        Identifier,
-        LiteralType,
-        PlaintextType,
-        RecordType,
-        Register,
-        RegisterType,
-        StructType,
-        ValueType,
+        Access, ArrayType, EntryType, Identifier, LiteralType, PlaintextType, RecordType, Register, RegisterType,
+        StructType, ValueType,
     },
 };
 use synthesizer_program::{
-    CallOperator,
-    Closure,
-    Function,
-    Instruction,
-    InstructionTrait,
-    Opcode,
-    Operand,
-    Program,
-    StackMatches,
+    CallOperator, Closure, Function, Instruction, InstructionTrait, Opcode, Operand, Program, StackMatches,
     StackProgram,
 };
 

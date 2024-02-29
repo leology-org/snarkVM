@@ -24,15 +24,8 @@ use console::{
     types::{Address, Field},
 };
 use synthesizer_program::{
-    Operand,
-    RegistersLoad,
-    RegistersLoadCircuit,
-    RegistersSigner,
-    RegistersSignerCircuit,
-    RegistersStore,
-    RegistersStoreCircuit,
-    StackMatches,
-    StackProgram,
+    Operand, RegistersLoad, RegistersLoadCircuit, RegistersSigner, RegistersSignerCircuit, RegistersStore,
+    RegistersStoreCircuit, StackMatches, StackProgram,
 };
 
 use indexmap::IndexMap;

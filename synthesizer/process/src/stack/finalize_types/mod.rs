@@ -20,15 +20,7 @@ use console::{
     program::{ArrayType, Identifier, LiteralType, PlaintextType, Register, RegisterType, StructType},
 };
 use synthesizer_program::{
-    Command,
-    Finalize,
-    Instruction,
-    InstructionTrait,
-    Opcode,
-    Operand,
-    Program,
-    StackMatches,
-    StackProgram,
+    Command, Finalize, Instruction, InstructionTrait, Opcode, Operand, Program, StackMatches, StackProgram,
 };
 
 use console::program::{Access, FinalizeType, Locator};

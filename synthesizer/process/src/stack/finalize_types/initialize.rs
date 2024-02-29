@@ -15,17 +15,7 @@
 use super::*;
 use crate::RegisterTypes;
 use synthesizer_program::{
-    Await,
-    Branch,
-    CastType,
-    Contains,
-    Get,
-    GetOrUse,
-    MappingLocator,
-    RandChaCha,
-    Remove,
-    Set,
-    MAX_ADDITIONAL_SEEDS,
+    Await, Branch, CastType, Contains, Get, GetOrUse, MappingLocator, RandChaCha, Remove, Set, MAX_ADDITIONAL_SEEDS,
 };
 
 impl<N: Network> FinalizeTypes<N> {

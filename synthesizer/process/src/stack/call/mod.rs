@@ -20,17 +20,8 @@ use console::{
     program::{Register, Request, Value, ValueType},
 };
 use synthesizer_program::{
-    Call,
-    CallOperator,
-    Operand,
-    RegistersLoad,
-    RegistersLoadCircuit,
-    RegistersSigner,
-    RegistersSignerCircuit,
-    RegistersStore,
-    RegistersStoreCircuit,
-    StackMatches,
-    StackProgram,
+    Call, CallOperator, Operand, RegistersLoad, RegistersLoadCircuit, RegistersSigner, RegistersSignerCircuit,
+    RegistersStore, RegistersStoreCircuit, StackMatches, StackProgram,
 };
 
 pub trait CallTrait<N: Network> {
@@ -45,12 +36,10 @@ pub trait CallTrait<N: Network> {
     fn execute<A: circuit::Aleo<Network = N>, R: CryptoRng + Rng>(
         &self,
         stack: &(impl StackEvaluate<N> + StackExecute<N> + StackMatches<N> + StackProgram<N>),
-        registers: &mut (
-                 impl RegistersCall<N>
-                 + RegistersSignerCircuit<N, A>
-                 + RegistersLoadCircuit<N, A>
-                 + RegistersStoreCircuit<N, A>
-             ),
+        registers: &mut (impl RegistersCall<N>
+                  + RegistersSignerCircuit<N, A>
+                  + RegistersLoadCircuit<N, A>
+                  + RegistersStoreCircuit<N, A>),
         rng: &mut R,
     ) -> Result<()>;
 }
@@ -137,12 +126,10 @@ impl<N: Network> CallTrait<N> for Call<N> {
     fn execute<A: circuit::Aleo<Network = N>, R: Rng + CryptoRng>(
         &self,
         stack: &(impl StackEvaluate<N> + StackExecute<N> + StackMatches<N> + StackProgram<N>),
-        registers: &mut (
-                 impl RegistersCall<N>
-                 + RegistersSignerCircuit<N, A>
-                 + RegistersLoadCircuit<N, A>
-                 + RegistersStoreCircuit<N, A>
-             ),
+        registers: &mut (impl RegistersCall<N>
+                  + RegistersSignerCircuit<N, A>
+                  + RegistersLoadCircuit<N, A>
+                  + RegistersStoreCircuit<N, A>),
         rng: &mut R,
     ) -> Result<()> {
         let timer = timer!("Call::execute");

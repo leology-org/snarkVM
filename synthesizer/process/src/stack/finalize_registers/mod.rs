@@ -22,13 +22,7 @@ use console::{
     types::U32,
 };
 use synthesizer_program::{
-    FinalizeGlobalState,
-    FinalizeRegistersState,
-    Operand,
-    RegistersLoad,
-    RegistersStore,
-    StackMatches,
-    StackProgram,
+    FinalizeGlobalState, FinalizeRegistersState, Operand, RegistersLoad, RegistersStore, StackMatches, StackProgram,
 };
 
 use indexmap::IndexMap;
