@@ -307,11 +307,8 @@ mod tests {
     use super::*;
 
     use crate::vm::test_helpers::sample_finalize_state;
-    use console::{
-        account::{Address, ViewKey},
-        types::Field,
-    };
-    use ledger_block::{Block, Header, Metadata, Transaction};
+    use console::account::ViewKey;
+    use ledger_block::Metadata;
 
     type CurrentNetwork = test_helpers::CurrentNetwork;
 

@@ -67,10 +67,7 @@ impl<N: Network> From<Data<Transaction<N>>> for Transmission<N> {
 #[cfg(any(test, feature = "test-helpers"))]
 pub mod test_helpers {
     use super::*;
-    use console::{
-        network::Testnet3,
-        prelude::{Rng, TestRng},
-    };
+    use console::network::Testnet3;
 
     use ::bytes::Bytes;
 

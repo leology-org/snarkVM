@@ -166,10 +166,7 @@ impl<N: Network, const VARIANT: u8> ToBytes for Branch<N, VARIANT> {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use console::{
-        network::Testnet3,
-        program::{Identifier, Register},
-    };
+    use console::{network::Testnet3, program::Register};
 
     type CurrentNetwork = Testnet3;
 

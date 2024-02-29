@@ -300,9 +300,7 @@ impl<N: Network, const VARIANT: u8> CastOperation<N, VARIANT> {
                 // Store the record.
                 registers.store(stack, &self.destination, Value::Record(record))
             }
-            CastType::ExternalRecord(_locator) => {
-                bail!("Illegal operation: Cannot cast to an external record.")
-            }
+            CastType::ExternalRecord(_locator) => bail!("Illegal operation: Cannot cast to an external record."),
         }
     }
 
@@ -549,9 +547,7 @@ impl<N: Network, const VARIANT: u8> CastOperation<N, VARIANT> {
                 // Store the record.
                 registers.store_circuit(stack, &self.destination, circuit::Value::Record(record))
             }
-            CastType::ExternalRecord(_locator) => {
-                bail!("Illegal operation: Cannot cast to an external record.")
-            }
+            CastType::ExternalRecord(_locator) => bail!("Illegal operation: Cannot cast to an external record."),
         }
     }
 
@@ -605,12 +601,9 @@ impl<N: Network, const VARIANT: u8> CastOperation<N, VARIANT> {
             CastType::Plaintext(PlaintextType::Array(array_type)) => {
                 self.cast_to_array(stack, registers, array_type, inputs)
             }
-            CastType::Record(_record_name) => {
-                bail!("Illegal operation: Cannot cast to a record in a finalize block.")
-            }
-            CastType::ExternalRecord(_locator) => {
-                bail!("Illegal operation: Cannot cast to an external record.")
-            }
+            CastType::Record(_record_name) => bail!("Illegal operation: Cannot cast to a record in a finalize block."),
+
+            CastType::ExternalRecord(_locator) => bail!("Illegal operation: Cannot cast to an external record."),
         }
     }
 
@@ -1087,10 +1080,7 @@ impl<N: Network, const VARIANT: u8> ToBytes for CastOperation<N, VARIANT> {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use console::{
-        network::Testnet3,
-        program::{Access, Identifier},
-    };
+    use console::{network::Testnet3, program::Access};
 
     type CurrentNetwork = Testnet3;
 

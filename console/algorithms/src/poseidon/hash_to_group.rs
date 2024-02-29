@@ -34,7 +34,6 @@ impl<E: Environment, const RATE: usize> HashToGroup for Poseidon<E, RATE> {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use snarkvm_console_types::environment::Console;
 
     type CurrentEnvironment = Console;
 

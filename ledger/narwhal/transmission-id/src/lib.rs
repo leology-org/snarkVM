@@ -67,11 +67,7 @@ impl<N: Network> TransmissionID<N> {
 #[cfg(any(test, feature = "test-helpers"))]
 pub mod test_helpers {
     use super::*;
-    use console::{
-        network::Testnet3,
-        prelude::{Rng, TestRng, Uniform},
-        types::Field,
-    };
+    use console::{network::Testnet3, types::Field};
 
     type CurrentNetwork = Testnet3;
 

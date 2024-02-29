@@ -215,7 +215,7 @@ impl<N: Network> Process<N> {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use console::prelude::TestRng;
+
     use ledger_block::Transaction;
 
     #[test]

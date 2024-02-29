@@ -387,7 +387,7 @@ impl<N: Network, E: ExecutionStorage<N>> ExecutionStore<N, E> {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use crate::{helpers::memory::ExecutionMemory, TransitionStore};
+    use crate::helpers::memory::ExecutionMemory;
 
     type CurrentNetwork = console::network::Testnet3;
 

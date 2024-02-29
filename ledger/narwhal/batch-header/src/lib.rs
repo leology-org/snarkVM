@@ -258,7 +258,7 @@ impl<N: Network> BatchHeader<N> {
 #[cfg(any(test, feature = "test-helpers"))]
 pub mod test_helpers {
     use super::*;
-    use console::{account::PrivateKey, network::Testnet3, prelude::TestRng};
+    use console::network::Testnet3;
 
     use time::OffsetDateTime;
 

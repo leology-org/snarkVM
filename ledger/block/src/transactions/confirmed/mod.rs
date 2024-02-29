@@ -437,7 +437,6 @@ pub mod test_helpers {
 #[cfg(test)]
 mod test {
     use super::*;
-    use crate::transactions::confirmed::test_helpers;
 
     type CurrentNetwork = console::network::Testnet3;
 

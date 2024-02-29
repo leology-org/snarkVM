@@ -226,9 +226,7 @@ impl<N: Network> BatchCertificate<N> {
 #[cfg(any(test, feature = "test-helpers"))]
 pub mod test_helpers {
     use super::*;
-    use console::{account::PrivateKey, network::Testnet3, prelude::TestRng, types::Field};
-
-    use indexmap::IndexSet;
+    use console::{account::PrivateKey, network::Testnet3};
 
     type CurrentNetwork = Testnet3;
 

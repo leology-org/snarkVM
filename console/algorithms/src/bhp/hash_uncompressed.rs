@@ -72,7 +72,6 @@ impl<E: Environment, const NUM_WINDOWS: u8, const WINDOW_SIZE: u8> HashUncompres
 #[cfg(test)]
 mod tests {
     use super::*;
-    use snarkvm_console_types::environment::Console;
 
     type CurrentEnvironment = Console;
 

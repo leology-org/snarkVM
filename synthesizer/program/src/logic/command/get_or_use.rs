@@ -273,7 +273,7 @@ impl<N: Network> ToBytes for GetOrUse<N> {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use console::{network::Testnet3, program::Register};
+    use console::network::Testnet3;
 
     type CurrentNetwork = Testnet3;
 

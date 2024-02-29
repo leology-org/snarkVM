@@ -17,7 +17,6 @@ extern crate criterion;
 
 use snarkvm_console_algorithms::{Poseidon2, Poseidon4, Poseidon8};
 use snarkvm_console_types::prelude::*;
-use snarkvm_utilities::{TestRng, Uniform};
 
 use criterion::Criterion;
 type F = Field<Console>;

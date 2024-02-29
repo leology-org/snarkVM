@@ -15,7 +15,7 @@
 #![allow(dead_code)]
 
 use crate::{FieldParameters, PrimeField};
-use snarkvm_utilities::{vec::Vec, FromBits};
+use snarkvm_utilities::FromBits;
 
 use anyhow::{bail, Result};
 

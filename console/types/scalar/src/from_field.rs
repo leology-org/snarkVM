@@ -42,7 +42,6 @@ impl<E: Environment> FromField for Scalar<E> {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use snarkvm_console_network_environment::Console;
 
     type CurrentEnvironment = Console;
 

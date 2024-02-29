@@ -13,7 +13,7 @@
 // limitations under the License.
 
 use crate::{Field, LegendreSymbol, One, PrimeField, SquareRootField, Zero};
-use snarkvm_utilities::{rand::Uniform, serialize::*, FromBytes, ToBits, ToBytes};
+use snarkvm_utilities::{rand::Uniform, serialize::*, ToBits};
 
 use rand::{
     distributions::{Distribution, Standard},
@@ -21,10 +21,10 @@ use rand::{
 };
 use serde::{Deserialize, Serialize};
 use std::{
-    cmp::{Ord, Ordering, PartialOrd},
+    cmp::Ordering,
     fmt::Debug,
     hash::Hash,
-    io::{Read, Result as IoResult, Write},
+    io::Result as IoResult,
     ops::{Add, AddAssign, Div, DivAssign, Mul, MulAssign, Neg, Sub, SubAssign},
 };
 

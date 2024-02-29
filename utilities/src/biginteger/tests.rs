@@ -12,10 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-use crate::{
-    biginteger::*,
-    rand::{TestRng, Uniform},
-};
+use crate::{biginteger::*, rand::TestRng};
 
 #[allow(clippy::eq_op)]
 fn biginteger_arithmetic_test<B: BigInteger>(a: B, b: B, zero: B) {

@@ -96,7 +96,6 @@ impl<E: Environment> CastLossy<Scalar<E>> for Field<E> {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use snarkvm_console_network::Console;
 
     type CurrentEnvironment = Console;
 

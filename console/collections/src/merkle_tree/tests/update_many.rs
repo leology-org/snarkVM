@@ -14,7 +14,6 @@
 
 use super::*;
 use snarkvm_console_algorithms::{Poseidon, BHP1024, BHP512};
-use snarkvm_console_types::prelude::Console;
 
 use indexmap::IndexMap;
 

@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-use crate::Vec;
-
 use anyhow::{ensure, Result};
 
 /// Takes as input a sequence of objects, and converts them to a series of little-endian bits.

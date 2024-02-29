@@ -560,7 +560,7 @@ impl<N: Network> Block<N> {
 #[cfg(test)]
 pub mod test_helpers {
     use super::*;
-    use console::account::{Address, PrivateKey};
+    use console::account::Address;
     use ledger_query::Query;
     use ledger_store::{helpers::memory::BlockMemory, BlockStore};
     use synthesizer_process::Process;

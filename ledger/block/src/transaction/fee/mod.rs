@@ -200,7 +200,6 @@ impl<N: Network> Deref for Fee<N> {
 #[cfg(test)]
 pub mod test_helpers {
     use super::*;
-    use console::types::Field;
     use ledger_query::Query;
     use ledger_store::{helpers::memory::BlockMemory, BlockStore};
     use synthesizer_process::Process;

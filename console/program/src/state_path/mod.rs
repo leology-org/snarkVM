@@ -237,7 +237,6 @@ impl<N: Network> StatePath<N> {
 #[cfg(any(test, feature = "test"))]
 pub mod test_helpers {
     use super::*;
-    use snarkvm_console_network::prelude::TestRng;
 
     /// Randomly sample a state path to a global state root.
     /// If a `commitment` is given, it is used. Otherwise, a `commitment` is randomly sampled.

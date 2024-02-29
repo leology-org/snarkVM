@@ -32,7 +32,6 @@ impl<E: Environment, I: IntegerType> Integer<E, I> {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use snarkvm_console_network_environment::Console;
 
     type CurrentEnvironment = Console;
 

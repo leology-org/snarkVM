@@ -120,8 +120,6 @@ fn sha3_512_native(preimage: &[u8]) -> [u8; 64] {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use crate::Rng;
-    use snarkvm_utilities::{bits_from_bytes_le, bytes_from_bits_le};
 
     macro_rules! check_equivalence {
         ($console:expr, $native:expr) => {

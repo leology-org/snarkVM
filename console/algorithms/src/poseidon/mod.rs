@@ -71,13 +71,12 @@ impl<E: Environment, const RATE: usize> Poseidon<E, RATE> {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use snarkvm_console_types::environment::Console;
     use snarkvm_curves::edwards_bls12::Fq;
-    use snarkvm_fields::{PoseidonDefaultField, PoseidonGrainLFSR};
+    use snarkvm_fields::PoseidonGrainLFSR;
 
     type CurrentEnvironment = Console;
 
-    use std::{path::PathBuf, sync::Arc};
+    use std::path::PathBuf;
 
     /// Returns the path to the `resources` folder for this module.
     fn resources_path() -> PathBuf {

@@ -127,7 +127,6 @@ pub fn proving_rewards<N: Network>(
 #[cfg(test)]
 mod tests {
     use super::*;
-    use console::prelude::TestRng;
 
     use indexmap::indexmap;
 

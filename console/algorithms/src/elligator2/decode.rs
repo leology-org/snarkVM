@@ -105,7 +105,6 @@ impl<E: Environment> Elligator2<E> {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use snarkvm_console_types::environment::Console;
 
     type CurrentEnvironment = Console;
 

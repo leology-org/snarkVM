@@ -48,17 +48,8 @@ use console::{
 use ledger_block::{Deployment, Execution, Fee, Input, Transition};
 use ledger_store::{atomic_batch_scope, FinalizeStorage, FinalizeStore};
 use synthesizer_program::{
-    Branch,
-    Closure,
-    Command,
-    Finalize,
-    FinalizeGlobalState,
-    FinalizeOperation,
-    Instruction,
-    Program,
-    RegistersLoad,
-    RegistersStore,
-    StackProgram,
+    Branch, Closure, Command, Finalize, FinalizeGlobalState, FinalizeOperation, Instruction, Program, RegistersLoad,
+    RegistersStore, StackProgram,
 };
 use synthesizer_snark::{ProvingKey, UniversalSRS, VerifyingKey};
 
@@ -283,11 +274,9 @@ impl<N: Network> Process<N> {
 #[cfg(any(test, feature = "test"))]
 pub mod test_helpers {
     use super::*;
-    use console::{account::PrivateKey, network::Testnet3, program::Identifier};
-    use ledger_block::Transition;
+    use console::network::Testnet3;
     use ledger_query::Query;
     use ledger_store::{helpers::memory::BlockMemory, BlockStore};
-    use synthesizer_program::Program;
 
     use once_cell::sync::OnceCell;
 

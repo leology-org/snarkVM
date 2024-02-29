@@ -15,16 +15,14 @@
 use snarkvm_fields::{field, Field, One, PrimeField, Zero};
 use snarkvm_utilities::{
     biginteger::{BigInteger256, BigInteger384},
-    BigInteger,
-    BitIteratorBE,
+    BigInteger, BitIteratorBE,
 };
 
 use crate::{
     bls12_377::{Fq, Fr},
     templates::bls12::Bls12Parameters,
     traits::{ModelParameters, ShortWeierstrassParameters},
-    AffineCurve,
-    ProjectiveCurve,
+    AffineCurve, ProjectiveCurve,
 };
 
 use std::ops::Neg;
@@ -143,7 +141,11 @@ impl ShortWeierstrassParameters for Bls12_377G1Parameters {
 
         let mod_signed = |d| {
             let d_mod_window_size = i64::try_from(d & MASK_FOR_MOD_TABLE_SIZE).unwrap();
-            if d_mod_window_size >= HALF_TABLE_SIZE { d_mod_window_size - TABLE_SIZE } else { d_mod_window_size }
+            if d_mod_window_size >= HALF_TABLE_SIZE {
+                d_mod_window_size - TABLE_SIZE
+            } else {
+                d_mod_window_size
+            }
         };
         let to_wnaf = |e: Self::ScalarField| -> Vec<i32> {
             let mut naf = vec![];
@@ -254,10 +256,7 @@ pub const G1_GENERATOR_Y: Fq = field!(
 #[cfg(test)]
 mod tests {
     use rand::Rng;
-    use snarkvm_fields::Field;
-    use snarkvm_utilities::{BitIteratorBE, TestRng, Uniform};
-
-    use crate::AffineCurve;
+    use snarkvm_utilities::{TestRng, Uniform};
 
     use super::{super::G1Affine, *};
 

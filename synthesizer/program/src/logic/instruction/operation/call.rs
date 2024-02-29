@@ -444,7 +444,7 @@ mod tests {
     use super::*;
     use console::{
         network::Testnet3,
-        program::{Access, Address, Identifier, Literal, U64},
+        program::{Access, Address, Literal, U64},
     };
 
     type CurrentNetwork = Testnet3;

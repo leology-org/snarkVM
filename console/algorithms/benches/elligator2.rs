@@ -17,7 +17,6 @@ extern crate criterion;
 
 use snarkvm_console_algorithms::Elligator2;
 use snarkvm_console_types::prelude::*;
-use snarkvm_utilities::{TestRng, Uniform};
 
 use criterion::Criterion;
 

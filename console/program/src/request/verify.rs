@@ -149,12 +149,12 @@ impl<N: Network> Request<N> {
                         ensure!(**record.owner() == self.signer, "Input record does not belong to the signer");
 
                         // Compute the record commitment.
-                        let candidate_cm = record.to_commitment(&self.program_id, record_name)?;
+                        let candidate_cm = record.to_commitment(&self.program_id, &record_name)?;
                         // Ensure the commitment matches.
                         ensure!(*commitment == candidate_cm, "Expected a record input with the same commitment");
 
                         // Compute the `candidate_sn` from `gamma`.
-                        let candidate_sn = Record::<N, Plaintext<N>>::serial_number_from_gamma(gamma, *commitment)?;
+                        let candidate_sn = Record::<N, Plaintext<N>>::serial_number_from_gamma(&gamma, *commitment)?;
                         // Ensure the serial number matches.
                         ensure!(*serial_number == candidate_sn, "Expected a record input with the same serial number");
 
@@ -209,7 +209,6 @@ impl<N: Network> Request<N> {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use snarkvm_console_account::PrivateKey;
     use snarkvm_console_network::Testnet3;
 
     type CurrentNetwork = Testnet3;

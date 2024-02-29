@@ -287,7 +287,6 @@ mod tests {
 
     #[allow(unused_imports)]
     use rayon::prelude::*;
-    use std::str::FromStr;
 
     /// Returns the committee map, given the map of `(validator, (microcredits, is_open))` entries.
     fn to_committee_map<N: Network>(members: &IndexMap<Address<N>, (u64, bool)>) -> Vec<(Plaintext<N>, Value<N>)> {

@@ -213,9 +213,9 @@ impl<N: Network> Deref for Subdag<N> {
 #[cfg(any(test, feature = "test-helpers"))]
 pub mod test_helpers {
     use super::*;
-    use console::{network::Testnet3, prelude::TestRng};
+    use console::network::Testnet3;
 
-    use indexmap::{indexset, IndexSet};
+    use indexmap::indexset;
 
     type CurrentNetwork = Testnet3;
 

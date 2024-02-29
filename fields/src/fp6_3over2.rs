@@ -13,13 +13,7 @@
 // limitations under the License.
 
 use crate::{Field, Fp2, Fp2Parameters, One, Zero};
-use snarkvm_utilities::{
-    rand::Uniform,
-    serialize::{SerializationError, *},
-    FromBytes,
-    ToBits,
-    ToBytes,
-};
+use snarkvm_utilities::{rand::Uniform, serialize::*, ToBits};
 
 use rand::{
     distributions::{Distribution, Standard},
@@ -30,7 +24,7 @@ use std::{
     cmp::Ordering,
     fmt::Debug,
     hash::Hash,
-    io::{Read, Result as IoResult, Write},
+    io::Result as IoResult,
     ops::{Add, AddAssign, Div, DivAssign, Mul, MulAssign, Neg, Sub, SubAssign},
 };
 

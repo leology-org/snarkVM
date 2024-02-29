@@ -205,7 +205,11 @@ impl<N: Network> Committee<N> {
             // Sort by stake in decreasing order.
             let cmp = stake2.cmp(stake1);
             // If the stakes are equal, sort by x-coordinate in decreasing order.
-            if cmp == Ordering::Equal { address2.to_x_coordinate().cmp(&address1.to_x_coordinate()) } else { cmp }
+            if cmp == Ordering::Equal {
+                address2.to_x_coordinate().cmp(&address1.to_x_coordinate())
+            } else {
+                cmp
+            }
         })
     }
 }
@@ -228,10 +232,8 @@ impl<N: Network> Committee<N> {
 #[cfg(any(test, feature = "test-helpers"))]
 pub mod test_helpers {
     use super::*;
-    use console::{account::Address, prelude::TestRng};
 
-    use indexmap::IndexMap;
-    use rand_distr::{Distribution, Exp};
+    use rand_distr::Exp;
 
     type CurrentNetwork = console::network::Testnet3;
 
@@ -318,7 +320,6 @@ pub mod test_helpers {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use console::prelude::TestRng;
 
     use parking_lot::RwLock;
     use rayon::prelude::*;

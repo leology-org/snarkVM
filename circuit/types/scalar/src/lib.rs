@@ -156,8 +156,6 @@ mod tests {
     use super::*;
     use snarkvm_circuit_environment::Circuit;
 
-    use core::str::FromStr;
-
     const ITERATIONS: u64 = 250;
 
     fn check_new(

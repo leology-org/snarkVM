@@ -29,7 +29,6 @@ impl<E: Environment> FromBits for Address<E> {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use snarkvm_console_network_environment::Console;
 
     type CurrentEnvironment = Console;
 

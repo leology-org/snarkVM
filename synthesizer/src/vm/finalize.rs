@@ -948,15 +948,13 @@ impl<N: Network, C: ConsensusStorage<N>> VM<N, C> {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use crate::vm::{test_helpers, test_helpers::sample_finalize_state};
+    use crate::vm::test_helpers::sample_finalize_state;
     use console::{
-        account::{Address, PrivateKey, ViewKey},
-        program::{Ciphertext, Entry, Record},
-        types::Field,
+        account::ViewKey,
+        program::{Ciphertext, Entry},
     };
-    use ledger_block::{Block, Header, Metadata, Transaction, Transition};
+    use ledger_block::{Metadata, Transition};
     use ledger_store::helpers::memory::ConsensusMemory;
-    use synthesizer_program::Program;
 
     use rand::distributions::DistString;
 
@@ -1632,11 +1630,10 @@ finalize compute:
             .get_value_speculative(program_id, mapping_name, &Plaintext::from(Literal::Address(address)))
             .unwrap();
         println!("{:?}", value);
-        assert!(
-            !vm.finalize_store()
-                .contains_key_confirmed(program_id, mapping_name, &Plaintext::from(Literal::Address(address)))
-                .unwrap()
-        );
+        assert!(!vm
+            .finalize_store()
+            .contains_key_confirmed(program_id, mapping_name, &Plaintext::from(Literal::Address(address)))
+            .unwrap());
 
         // Create an execution transaction, that will be rejected.
         let r0 = Value::<CurrentNetwork>::from_str("100u8").unwrap();

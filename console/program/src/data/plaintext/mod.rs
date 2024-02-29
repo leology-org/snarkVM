@@ -60,9 +60,6 @@ impl<N: Network> From<&Literal<N>> for Plaintext<N> {
 mod tests {
     use super::*;
     use snarkvm_console_network::Testnet3;
-    use snarkvm_console_types::Field;
-
-    use core::str::FromStr;
 
     type CurrentNetwork = Testnet3;
 

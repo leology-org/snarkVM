@@ -52,8 +52,6 @@ pub(crate) mod test_helpers {
     };
     use console::{network::Testnet3, prelude::One as _};
 
-    use once_cell::sync::OnceCell;
-
     type CurrentNetwork = Testnet3;
 
     /// Compute 2^EXPONENT - 1, in a purposefully constraint-inefficient manner for testing.

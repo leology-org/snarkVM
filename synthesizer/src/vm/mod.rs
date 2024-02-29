@@ -29,31 +29,15 @@ use console::{
     types::{Field, Group, U64},
 };
 use ledger_block::{
-    Block,
-    ConfirmedTransaction,
-    Deployment,
-    Execution,
-    Fee,
-    Header,
-    Ratifications,
-    Ratify,
-    Rejected,
-    Transaction,
+    Block, ConfirmedTransaction, Deployment, Execution, Fee, Header, Ratifications, Ratify, Rejected, Transaction,
     Transactions,
 };
 use ledger_coinbase::CoinbaseSolution;
 use ledger_committee::Committee;
 use ledger_query::Query;
 use ledger_store::{
-    atomic_finalize,
-    BlockStore,
-    ConsensusStorage,
-    ConsensusStore,
-    FinalizeMode,
-    FinalizeStore,
-    TransactionStorage,
-    TransactionStore,
-    TransitionStore,
+    atomic_finalize, BlockStore, ConsensusStorage, ConsensusStore, FinalizeMode, FinalizeStore, TransactionStorage,
+    TransactionStore, TransitionStore,
 };
 use synthesizer_process::{Authorization, Process, Trace};
 use synthesizer_program::{FinalizeGlobalState, FinalizeOperation, FinalizeStoreTrait, Program};
@@ -278,7 +262,7 @@ impl<N: Network, C: ConsensusStorage<N>> VM<N, C> {
         let ratifications = vec![Ratify::Genesis(committee, public_balances)];
         // Prepare the solutions.
         let solutions = None; // The genesis block does not require solutions.
-        // Prepare the transactions.
+                              // Prepare the transactions.
         let transactions = (0..Block::<N>::NUM_GENESIS_TRANSACTIONS)
             .map(|_| self.execute(private_key, locator, inputs.iter(), None, 0, None, rng))
             .collect::<Result<Vec<_>, _>>()?;
@@ -358,17 +342,10 @@ impl<N: Network, C: ConsensusStorage<N>> VM<N, C> {
 #[cfg(test)]
 pub(crate) mod test_helpers {
     use super::*;
-    use console::{
-        account::{Address, ViewKey},
-        network::Testnet3,
-        program::Value,
-        types::Field,
-    };
-    use ledger_block::{Block, Header, Metadata, Transition};
+    use console::{account::ViewKey, network::Testnet3};
+    use ledger_block::{Metadata, Transition};
     use ledger_store::helpers::memory::ConsensusMemory;
-    use synthesizer_program::Program;
 
-    use indexmap::IndexMap;
     use once_cell::sync::OnceCell;
     use std::borrow::Borrow;
 
@@ -943,12 +920,10 @@ function a:
             vm.transaction_store().deployment_transaction_ids().map(|id| *id).collect::<Vec<_>>();
         // This `assert_ne` check is here to ensure that we are properly loading imports even though any order will work for `VM::from`.
         // Note: `deployment_transaction_ids` is sorted lexicographically by transaction id, so the order may change if we update internal methods.
-        assert_ne!(deployment_transaction_ids, vec![
-            deployment_1.id(),
-            deployment_2.id(),
-            deployment_3.id(),
-            deployment_4.id()
-        ]);
+        assert_ne!(
+            deployment_transaction_ids,
+            vec![deployment_1.id(), deployment_2.id(), deployment_3.id(), deployment_4.id()]
+        );
 
         // Enforce that the VM can load properly with the imports.
         assert!(VM::from(vm.store.clone()).is_ok());

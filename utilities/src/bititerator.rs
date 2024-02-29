@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-use std::iter::ExactSizeIterator;
-
 /// Iterates over a slice of `u64` in *big-endian* order.
 #[derive(Debug)]
 pub struct BitIteratorBE<Slice> {
