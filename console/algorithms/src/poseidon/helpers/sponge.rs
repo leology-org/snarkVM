@@ -16,11 +16,11 @@ use crate::poseidon::{
     helpers::{AlgebraicSponge, DuplexSpongeMode},
     State,
 };
-use snarkvm_console_types::{prelude::*, Field};
+use snarkvm_console_types::prelude::*;
 use snarkvm_fields::PoseidonParameters;
 
 use smallvec::SmallVec;
-use std::{ops::DerefMut, sync::Arc};
+use std::sync::Arc;
 
 /// A duplex sponge based using the Poseidon permutation.
 ///

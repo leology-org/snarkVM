@@ -24,7 +24,6 @@ impl<E: Environment, I: IntegerType> Distribution<Integer<E, I>> for Standard {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use snarkvm_console_network_environment::Console;
 
     use std::collections::HashSet;
 

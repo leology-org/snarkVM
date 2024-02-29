@@ -14,8 +14,6 @@
 
 use super::*;
 
-use snarkvm_utilities::DeserializeExt;
-
 impl<N: Network> Serialize for ProverSolution<N> {
     /// Serializes the prover solution to a JSON-string or buffer.
     fn serialize<S: Serializer>(&self, serializer: S) -> Result<S::Ok, S::Error> {

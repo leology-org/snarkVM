@@ -41,8 +41,6 @@ mod tests {
     use snarkvm_circuit_types::environment::Circuit;
     use snarkvm_curves::{AffineCurve, ProjectiveCurve};
 
-    use anyhow::Result;
-
     const ITERATIONS: u64 = 100;
     const DOMAIN: &str = "PoseidonCircuit0";
 

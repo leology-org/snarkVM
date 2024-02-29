@@ -21,19 +21,14 @@ use crate::{
     },
     polycommit::sonic_pc::LabeledPolynomial,
     snark::varuna::{
-        ahp::matrices::MatrixEvals,
-        matrices::MatrixArithmetization,
-        AHPForR1CS,
-        CircuitInfo,
-        Matrix,
-        SNARKMode,
+        ahp::matrices::MatrixEvals, matrices::MatrixArithmetization, AHPForR1CS, CircuitInfo, Matrix, SNARKMode,
     },
 };
 use anyhow::{anyhow, Result};
 use blake2::Digest;
 use hex::FromHex;
 use snarkvm_fields::PrimeField;
-use snarkvm_utilities::{serialize::*, SerializationError};
+use snarkvm_utilities::serialize::*;
 
 #[derive(Copy, Clone, Debug, PartialEq, Eq, Ord, PartialOrd, CanonicalSerialize, CanonicalDeserialize)]
 pub struct CircuitId(pub [u8; 32]);

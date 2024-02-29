@@ -13,14 +13,9 @@
 // limitations under the License.
 
 use crate::{
-    atomic_batch_scope,
-    cow_to_cloned,
-    cow_to_copied,
+    atomic_batch_scope, cow_to_cloned, cow_to_copied,
     helpers::{Map, MapRead},
-    TransactionStorage,
-    TransactionStore,
-    TransitionStorage,
-    TransitionStore,
+    TransactionStorage, TransactionStore, TransitionStorage, TransitionStore,
 };
 use console::{
     network::prelude::*,
@@ -29,21 +24,13 @@ use console::{
 };
 use ledger_authority::Authority;
 use ledger_block::{
-    Block,
-    ConfirmedTransaction,
-    Header,
-    NumFinalizeSize,
-    Ratifications,
-    Rejected,
-    Transaction,
-    Transactions,
+    Block, ConfirmedTransaction, Header, NumFinalizeSize, Ratifications, Rejected, Transaction, Transactions,
 };
 use ledger_coinbase::{CoinbaseSolution, ProverSolution, PuzzleCommitment};
 use ledger_narwhal_batch_certificate::BatchCertificate;
 use synthesizer_program::Program;
 
 use aleo_std_storage::StorageMode;
-use anyhow::Result;
 use parking_lot::RwLock;
 use std::{borrow::Cow, io::Cursor, sync::Arc};
 

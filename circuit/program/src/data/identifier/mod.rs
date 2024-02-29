@@ -158,8 +158,7 @@ pub(crate) mod tests {
     use crate::Circuit;
     use console::{Rng, TestRng};
 
-    use anyhow::{bail, Result};
-    use core::str::FromStr;
+    use anyhow::bail;
     use rand::distributions::Alphanumeric;
 
     /// Samples a random identifier.

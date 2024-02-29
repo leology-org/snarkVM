@@ -13,7 +13,7 @@
 // limitations under the License.
 
 use super::*;
-use snarkvm_circuit_environment::{Circuit, CircuitType};
+use snarkvm_circuit_environment::Circuit;
 
 #[allow(clippy::only_used_in_recursion)]
 impl<E: Environment> Pow<Field<E>> for Field<E> {
@@ -134,7 +134,6 @@ impl<E: Environment> OutputMode<dyn Pow<Field<E>, Output = Field<E>>> for Field<
 #[cfg(test)]
 mod tests {
     use super::*;
-    use snarkvm_circuit_environment::Circuit;
 
     const ITERATIONS: u64 = 10;
 

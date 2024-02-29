@@ -104,8 +104,6 @@ mod tests {
     use crate::Circuit;
     use snarkvm_utilities::{TestRng, Uniform};
 
-    use anyhow::Result;
-
     #[test]
     fn test_plaintext() -> Result<()> {
         let run_test = |value: Plaintext<Circuit>| {

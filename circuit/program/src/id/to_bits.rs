@@ -49,8 +49,6 @@ mod tests {
     use super::*;
     use crate::{data::identifier::tests::sample_lowercase_console_identifier_as_string, Circuit};
 
-    use anyhow::Result;
-
     const ITERATIONS: usize = 100;
 
     fn check_to_bits_le(mode: Mode) -> Result<()> {

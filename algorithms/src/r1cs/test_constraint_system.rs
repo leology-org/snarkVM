@@ -25,6 +25,7 @@ pub type Fr = snarkvm_curves::bls12_377::Fr;
 
 #[derive(Debug, Clone)]
 enum NamedObject {
+    #[allow(dead_code)]
     Constraint(usize),
     Var(Variable),
     // contains the list of named objects that belong to it

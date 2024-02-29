@@ -22,8 +22,7 @@ use crate::{
             AHPForR1CS,
         },
         matrices::{into_matrix_helper, matrix_evals, MatrixEvals},
-        num_non_zero,
-        SNARKMode,
+        num_non_zero, SNARKMode,
     },
 };
 use snarkvm_fields::PrimeField;

@@ -16,9 +16,7 @@ use crate::{
     fft::{
         domain::{FFTPrecomputation, IFFTPrecomputation},
         polynomial::PolyMultiplier,
-        DensePolynomial,
-        EvaluationDomain,
-        Evaluations as EvaluationsOnDomain,
+        DensePolynomial, EvaluationDomain, Evaluations as EvaluationsOnDomain,
     },
     polycommit::sonic_pc::{LabeledPolynomial, PolynomialInfo, PolynomialLabel},
     snark::varuna::{
@@ -26,15 +24,13 @@ use crate::{
         matrices::MatrixEvals,
         prover,
         selectors::apply_randomized_selector,
-        witness_label,
-        SNARKMode,
+        witness_label, SNARKMode,
     },
 };
 use snarkvm_fields::{batch_inversion_and_mul, PrimeField};
 use snarkvm_utilities::{cfg_iter, cfg_iter_mut, ExecutionPool};
 
 use anyhow::Result;
-use core::convert::TryInto;
 use itertools::Itertools;
 use rand_core::RngCore;
 use std::collections::BTreeMap;

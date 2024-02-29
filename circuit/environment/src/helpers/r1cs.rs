@@ -16,7 +16,6 @@ use crate::{
     helpers::{Constraint, Counter},
     prelude::*,
 };
-use snarkvm_fields::PrimeField;
 
 use std::rc::Rc;
 

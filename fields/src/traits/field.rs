@@ -17,16 +17,10 @@ use snarkvm_utilities::{
     bititerator::BitIteratorBE,
     rand::Uniform,
     serialize::{
-        CanonicalDeserialize,
-        CanonicalDeserializeWithFlags,
-        CanonicalSerialize,
-        CanonicalSerializeWithFlags,
-        EmptyFlags,
-        Flags,
+        CanonicalDeserialize, CanonicalDeserializeWithFlags, CanonicalSerialize, CanonicalSerializeWithFlags,
+        EmptyFlags, Flags,
     },
-    FromBytes,
-    ToBits,
-    ToBytes,
+    FromBytes, ToBits, ToBytes,
 };
 
 use std::{

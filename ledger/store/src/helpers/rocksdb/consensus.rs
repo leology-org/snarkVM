@@ -14,9 +14,7 @@
 
 use crate::{
     helpers::rocksdb::{BlockDB, FinalizeDB, TransactionDB, TransitionDB},
-    BlockStore,
-    ConsensusStorage,
-    FinalizeStore,
+    BlockStore, ConsensusStorage, FinalizeStore,
 };
 use console::prelude::*;
 

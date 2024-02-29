@@ -14,9 +14,7 @@
 
 use crate::{
     traits::{StackEvaluate, StackExecute},
-    CallStack,
-    Process,
-    Trace,
+    CallStack, Process, Trace,
 };
 use circuit::{network::AleoV0, Aleo};
 use console::{
@@ -29,10 +27,7 @@ use ledger_block::Fee;
 use ledger_query::Query;
 use ledger_store::{
     helpers::memory::{BlockMemory, FinalizeMemory},
-    BlockStorage,
-    BlockStore,
-    FinalizeStorage,
-    FinalizeStore,
+    BlockStorage, BlockStore, FinalizeStorage, FinalizeStore,
 };
 use synthesizer_program::{FinalizeGlobalState, FinalizeStoreTrait, Program};
 use synthesizer_snark::UniversalSRS;

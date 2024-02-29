@@ -15,7 +15,7 @@
 use crate::snark::varuna::{ahp::AHPForR1CS, SNARKMode};
 use anyhow::Result;
 use snarkvm_fields::PrimeField;
-use snarkvm_utilities::{serialize::*, ToBytes};
+use snarkvm_utilities::serialize::*;
 
 /// Information about the circuit, including the field of definition, the number of
 /// variables, the number of constraints, and the maximum number of non-zero

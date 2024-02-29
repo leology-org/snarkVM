@@ -13,16 +13,13 @@
 // limitations under the License.
 
 use crate::{
-    atomic_batch_scope,
-    cow_to_cloned,
-    cow_to_copied,
+    atomic_batch_scope, cow_to_cloned, cow_to_copied,
     helpers::{Map, MapRead},
 };
 use console::network::prelude::*;
 use ledger_committee::Committee;
 
 use aleo_std_storage::StorageMode;
-use anyhow::Result;
 use core::marker::PhantomData;
 
 const ROUND_KEY: u8 = 0;

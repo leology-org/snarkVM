@@ -16,11 +16,7 @@ use crate::Identifier;
 use snarkvm_circuit_network::Aleo;
 use snarkvm_circuit_types::{environment::prelude::*, U32};
 
-use std::{
-    fmt,
-    fmt::{Debug, Display, Formatter},
-    str::FromStr,
-};
+use std::fmt;
 
 /// A helper type for accessing an entry in a register, struct, array, or record.
 #[derive(Clone)]

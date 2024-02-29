@@ -94,7 +94,7 @@ mod tests {
         network::Testnet3,
         prelude::{One, TestRng, Uniform, Zero},
     };
-    use snarkvm_circuit_types::environment::{count_is, count_less_than, Circuit, Eject, Inject, Mode, UpdatableCount};
+    use snarkvm_circuit_types::environment::{count_is, count_less_than, Circuit, Eject, Mode, UpdatableCount};
 
     use std::fmt::Debug;
 

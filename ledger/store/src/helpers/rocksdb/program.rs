@@ -16,9 +16,7 @@
 
 use crate::{
     helpers::rocksdb::{self, CommitteeMap, DataMap, Database, MapID, NestedDataMap, ProgramMap},
-    CommitteeStorage,
-    CommitteeStore,
-    FinalizeStorage,
+    CommitteeStorage, CommitteeStore, FinalizeStorage,
 };
 use console::{
     prelude::*,

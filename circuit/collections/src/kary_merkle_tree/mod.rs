@@ -88,8 +88,6 @@ mod tests {
     use snarkvm_circuit_network::AleoV0 as Circuit;
     use snarkvm_utilities::{TestRng, Uniform};
 
-    use anyhow::Result;
-
     const ITERATIONS: u128 = 100;
 
     fn check_new<const DEPTH: u8, const ARITY: u8>(

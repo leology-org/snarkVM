@@ -16,8 +16,7 @@ use crate::{
     r1cs::ConstraintSynthesizer,
     snark::varuna::{
         ahp::{indexer::Circuit, AHPError, AHPForR1CS},
-        prover,
-        SNARKMode,
+        prover, SNARKMode,
     },
 };
 use snarkvm_fields::PrimeField;

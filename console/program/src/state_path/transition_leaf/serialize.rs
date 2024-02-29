@@ -14,8 +14,6 @@
 
 use super::*;
 
-use snarkvm_utilities::DeserializeExt;
-
 impl<N: Network> Serialize for TransitionLeaf<N> {
     /// Serializes the leaf into string or bytes.
     fn serialize<S: Serializer>(&self, serializer: S) -> Result<S::Ok, S::Error> {

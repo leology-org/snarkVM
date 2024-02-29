@@ -14,15 +14,8 @@
 
 use crate::{
     helpers::memory::{MemoryMap, TransitionMemory},
-    DeploymentStorage,
-    DeploymentStore,
-    ExecutionStorage,
-    ExecutionStore,
-    FeeStorage,
-    FeeStore,
-    TransactionStorage,
-    TransactionType,
-    TransitionStore,
+    DeploymentStorage, DeploymentStore, ExecutionStorage, ExecutionStore, FeeStorage, FeeStore, TransactionStorage,
+    TransactionType, TransitionStore,
 };
 use console::{
     prelude::*,

@@ -15,15 +15,9 @@
 use crate::{
     helpers::rocksdb::{
         internal::{self, DataMap, Database},
-        BlockMap,
-        MapID,
-        TransactionDB,
-        TransitionDB,
+        BlockMap, MapID, TransactionDB, TransitionDB,
     },
-    BlockStorage,
-    ConfirmedTxType,
-    TransactionStore,
-    TransitionStore,
+    BlockStorage, ConfirmedTxType, TransactionStore, TransitionStore,
 };
 use console::{prelude::*, types::Field};
 use ledger_authority::Authority;

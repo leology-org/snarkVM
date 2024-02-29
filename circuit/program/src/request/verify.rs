@@ -300,8 +300,6 @@ mod tests {
     use crate::Circuit;
     use snarkvm_utilities::TestRng;
 
-    use anyhow::Result;
-
     pub(crate) const ITERATIONS: usize = 50;
 
     fn check_verify(

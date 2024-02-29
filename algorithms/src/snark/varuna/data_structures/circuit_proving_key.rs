@@ -17,12 +17,7 @@ use crate::{
     snark::varuna::{ahp::indexer::*, CircuitVerifyingKey, SNARKMode},
 };
 use snarkvm_curves::PairingEngine;
-use snarkvm_utilities::{
-    io::{self, Read, Write},
-    serialize::*,
-    FromBytes,
-    ToBytes,
-};
+use snarkvm_utilities::serialize::*;
 
 use std::{cmp::Ordering, sync::Arc};
 

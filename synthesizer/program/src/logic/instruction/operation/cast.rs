@@ -14,36 +14,16 @@
 
 use crate::{
     traits::{
-        RegistersLoad,
-        RegistersLoadCircuit,
-        RegistersSigner,
-        RegistersSignerCircuit,
-        RegistersStore,
-        RegistersStoreCircuit,
-        StackMatches,
-        StackProgram,
+        RegistersLoad, RegistersLoadCircuit, RegistersSigner, RegistersSignerCircuit, RegistersStore,
+        RegistersStoreCircuit, StackMatches, StackProgram,
     },
-    Opcode,
-    Operand,
+    Opcode, Operand,
 };
 use console::{
     network::prelude::*,
     program::{
-        ArrayType,
-        Entry,
-        EntryType,
-        Identifier,
-        Literal,
-        LiteralType,
-        Locator,
-        Owner,
-        Plaintext,
-        PlaintextType,
-        Record,
-        Register,
-        RegisterType,
-        Value,
-        ValueType,
+        ArrayType, Entry, EntryType, Identifier, Literal, LiteralType, Locator, Owner, Plaintext, PlaintextType,
+        Record, Register, RegisterType, Value, ValueType,
     },
     types::Field,
 };

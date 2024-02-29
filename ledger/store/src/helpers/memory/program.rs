@@ -16,9 +16,7 @@
 
 use crate::{
     helpers::memory::{MemoryMap, NestedMemoryMap},
-    CommitteeStorage,
-    CommitteeStore,
-    FinalizeStorage,
+    CommitteeStorage, CommitteeStore, FinalizeStorage,
 };
 use console::{
     prelude::*,

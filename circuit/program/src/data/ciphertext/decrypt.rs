@@ -42,10 +42,7 @@ impl<A: Aleo> Ciphertext<A> {
 mod tests {
     use super::*;
     use crate::{Circuit, Literal};
-    use snarkvm_circuit_types::Field;
     use snarkvm_utilities::{TestRng, Uniform};
-
-    use anyhow::Result;
 
     const ITERATIONS: u64 = 100;
 

@@ -29,7 +29,6 @@ mod tests {
     use super::*;
     use crate::{helpers::generate_account, Circuit};
 
-    use anyhow::Result;
     use snarkvm_circuit_network::AleoV0;
 
     const ITERATIONS: u64 = 100;

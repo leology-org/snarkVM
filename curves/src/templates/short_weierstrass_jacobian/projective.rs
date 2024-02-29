@@ -17,7 +17,7 @@ use crate::{
     traits::{AffineCurve, ProjectiveCurve, ShortWeierstrassParameters as Parameters},
 };
 use snarkvm_fields::{impl_add_sub_from_field_ref, Field, One, Zero};
-use snarkvm_utilities::{cfg_iter_mut, rand::Uniform, serialize::*, FromBytes, ToBytes};
+use snarkvm_utilities::{cfg_iter_mut, rand::Uniform, serialize::*};
 
 use core::{
     fmt::{Display, Formatter, Result as FmtResult},
@@ -30,7 +30,7 @@ use rand::{
 };
 #[cfg(not(feature = "serial"))]
 use rayon::prelude::*;
-use std::io::{Read, Result as IoResult, Write};
+use std::io::Result as IoResult;
 
 #[derive(Copy, Clone, Debug)]
 pub struct Projective<P: Parameters> {
@@ -383,7 +383,11 @@ impl<P: Parameters> Neg for Projective<P> {
 
     #[inline]
     fn neg(self) -> Self {
-        if !self.is_zero() { Self::new(self.x, -self.y, self.z) } else { self }
+        if !self.is_zero() {
+            Self::new(self.x, -self.y, self.z)
+        } else {
+            self
+        }
     }
 }
 
@@ -506,6 +510,10 @@ impl<P: Parameters> MulAssign<P::ScalarField> for Projective<P> {
 impl<P: Parameters> From<Affine<P>> for Projective<P> {
     #[inline]
     fn from(p: Affine<P>) -> Projective<P> {
-        if p.is_zero() { Self::zero() } else { Self::new(p.x, p.y, P::BaseField::one()) }
+        if p.is_zero() {
+            Self::zero()
+        } else {
+            Self::new(p.x, p.y, P::BaseField::one())
+        }
     }
 }

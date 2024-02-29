@@ -14,9 +14,7 @@
 
 use crate::{
     traits::{RegistersLoad, RegistersStore, StackMatches, StackProgram},
-    FinalizeRegistersState,
-    Opcode,
-    Operand,
+    FinalizeRegistersState, Opcode, Operand,
 };
 use console::{
     network::prelude::*,

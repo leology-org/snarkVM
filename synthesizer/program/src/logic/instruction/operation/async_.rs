@@ -14,12 +14,7 @@
 
 use crate::{
     traits::{RegistersLoad, StackMatches, StackProgram},
-    Opcode,
-    Operand,
-    RegistersLoadCircuit,
-    RegistersStore,
-    RegistersStoreCircuit,
-    Result,
+    Opcode, Operand, RegistersLoadCircuit, RegistersStore, RegistersStoreCircuit,
 };
 
 use circuit::{Inject, Mode};
@@ -141,7 +136,7 @@ impl<N: Network> Async<N> {
         _stack: &(impl StackMatches<N> + StackProgram<N>),
         _registers: &mut (impl RegistersLoad<N> + RegistersStore<N>),
     ) -> Result<()> {
-        bail!("Forbidden operation: Finalize cannot invoke 'async'.")
+        Err(Error::msg("Forbidden operation: Finalize cannot invoke 'async'."))
     }
 
     /// Returns the output type from the given program and input types.

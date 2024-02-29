@@ -70,8 +70,7 @@ impl VariableBase {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use snarkvm_curves::bls12_377::{Fr, G1Affine};
-    use snarkvm_fields::PrimeField;
+    use snarkvm_curves::bls12_377::Fr;
     use snarkvm_utilities::rand::TestRng;
 
     #[cfg(all(feature = "cuda", target_arch = "x86_64"))]

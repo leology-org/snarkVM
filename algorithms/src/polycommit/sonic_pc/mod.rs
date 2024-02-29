@@ -25,7 +25,7 @@ use snarkvm_curves::traits::{AffineCurve, PairingCurve, PairingEngine, Projectiv
 use snarkvm_fields::{One, Zero};
 
 use anyhow::{bail, ensure, Result};
-use core::{convert::TryInto, marker::PhantomData, ops::Mul};
+use core::{marker::PhantomData, ops::Mul};
 use rand_core::{RngCore, SeedableRng};
 use std::{
     borrow::Borrow,

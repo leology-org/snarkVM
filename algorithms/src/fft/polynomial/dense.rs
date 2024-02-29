@@ -511,7 +511,7 @@ mod tests {
     use crate::fft::polynomial::*;
     use num_traits::CheckedDiv;
     use snarkvm_curves::bls12_377::Fr;
-    use snarkvm_fields::{Field, One, Zero};
+    use snarkvm_fields::{One, Zero};
     use snarkvm_utilities::rand::{TestRng, Uniform};
 
     use rand::RngCore;

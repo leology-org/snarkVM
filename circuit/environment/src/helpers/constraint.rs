@@ -13,7 +13,6 @@
 // limitations under the License.
 
 use crate::{prelude::*, *};
-use snarkvm_fields::PrimeField;
 
 #[derive(Clone, Debug)]
 pub struct Constraint<F: PrimeField>(

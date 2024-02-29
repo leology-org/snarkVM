@@ -62,8 +62,6 @@ mod tests {
     use snarkvm_circuit_types::environment::Circuit;
     use snarkvm_utilities::{TestRng, Uniform};
 
-    use anyhow::Result;
-
     const ITERATIONS: u128 = 10;
     const DOMAIN: &str = "MerkleTreeCircuit0";
 

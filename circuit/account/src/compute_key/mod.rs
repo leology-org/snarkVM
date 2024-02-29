@@ -91,8 +91,6 @@ pub(crate) mod tests {
     use super::*;
     use crate::{helpers::generate_account, Circuit};
 
-    use anyhow::Result;
-
     const ITERATIONS: u64 = 250;
 
     fn check_new(

@@ -25,8 +25,6 @@ use crate::{Plaintext, Visibility};
 use snarkvm_circuit_network::Aleo;
 use snarkvm_circuit_types::{environment::prelude::*, Boolean, Field};
 
-use core::ops::Deref;
-
 #[derive(Clone)]
 pub struct Ciphertext<A: Aleo>(Vec<Field<A>>);
 

@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-use snarkvm_console_types::{prelude::*, Field};
+use snarkvm_console_types::prelude::*;
 
 use core::ops::{Index, IndexMut, Range};
 
@@ -57,13 +57,21 @@ impl<E: Environment, const RATE: usize, const CAPACITY: usize> Index<usize> for 
 
     fn index(&self, index: usize) -> &Self::Output {
         assert!(index < RATE + CAPACITY, "Index out of bounds: index is {} but length is {}", index, RATE + CAPACITY);
-        if index < CAPACITY { &self.capacity_state[index] } else { &self.rate_state[index - CAPACITY] }
+        if index < CAPACITY {
+            &self.capacity_state[index]
+        } else {
+            &self.rate_state[index - CAPACITY]
+        }
     }
 }
 
 impl<E: Environment, const RATE: usize, const CAPACITY: usize> IndexMut<usize> for State<E, RATE, CAPACITY> {
     fn index_mut(&mut self, index: usize) -> &mut Self::Output {
         assert!(index < RATE + CAPACITY, "Index out of bounds: index is {} but length is {}", index, RATE + CAPACITY);
-        if index < CAPACITY { &mut self.capacity_state[index] } else { &mut self.rate_state[index - CAPACITY] }
+        if index < CAPACITY {
+            &mut self.capacity_state[index]
+        } else {
+            &mut self.rate_state[index - CAPACITY]
+        }
     }
 }

@@ -14,10 +14,7 @@
 
 use crate::{
     helpers::memory::{MemoryMap, TransactionMemory, TransitionMemory},
-    BlockStorage,
-    ConfirmedTxType,
-    TransactionStore,
-    TransitionStore,
+    BlockStorage, ConfirmedTxType, TransactionStore, TransitionStore,
 };
 use console::{prelude::*, types::Field};
 use ledger_authority::Authority;

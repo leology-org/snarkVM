@@ -13,20 +13,15 @@
 // limitations under the License.
 
 use crate::{
-    atomic_batch_scope,
-    cow_to_cloned,
-    cow_to_copied,
+    atomic_batch_scope, cow_to_cloned, cow_to_copied,
     helpers::{Map, MapRead},
-    FeeStorage,
-    FeeStore,
-    TransitionStore,
+    FeeStorage, FeeStore, TransitionStore,
 };
 use console::network::prelude::*;
 use ledger_block::{Execution, Transaction, Transition};
 use synthesizer_snark::Proof;
 
 use aleo_std_storage::StorageMode;
-use anyhow::Result;
 use core::marker::PhantomData;
 use std::borrow::Cow;
 

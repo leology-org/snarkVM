@@ -442,7 +442,6 @@ fn branch_to<N: Network, const VARIANT: u8>(
 mod tests {
     use super::*;
     use crate::tests::test_execute::{sample_fee, sample_finalize_state};
-    use console::prelude::TestRng;
     use ledger_store::{
         helpers::memory::{BlockMemory, FinalizeMemory},
         BlockStore,

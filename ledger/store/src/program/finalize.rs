@@ -13,9 +13,7 @@
 // limitations under the License.
 
 use crate::{
-    atomic_batch_scope,
-    cow_to_cloned,
-    cow_to_copied,
+    atomic_batch_scope, cow_to_cloned, cow_to_copied,
     helpers::{Map, MapRead, NestedMap, NestedMapRead},
     program::{CommitteeStorage, CommitteeStore},
 };
@@ -27,7 +25,6 @@ use console::{
 use synthesizer_program::{FinalizeOperation, FinalizeStoreTrait};
 
 use aleo_std_storage::StorageMode;
-use anyhow::Result;
 use core::marker::PhantomData;
 use indexmap::IndexSet;
 
@@ -314,7 +311,7 @@ pub trait FinalizeStorage<N: Network>: 'static + Clone + Send + Sync {
             None => bail!("Illegal operation: program ID '{program_id}' is not initialized - cannot remove mapping."),
         };
         // Remove the mapping name.
-        if !mapping_names.remove(&mapping_name) {
+        if !mapping_names.swap_remove(&mapping_name) {
             bail!("Illegal operation: mapping '{mapping_name}' does not exist in storage - cannot remove mapping.");
         }
 

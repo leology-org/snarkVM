@@ -20,8 +20,7 @@ use crate::{
         ahp::{
             indexer::{CircuitId, CircuitInfo},
             verifier::{BatchCombiners, FirstMessage, FourthMessage, QuerySet, SecondMessage, State, ThirdMessage},
-            AHPError,
-            AHPForR1CS,
+            AHPError, AHPForR1CS,
         },
         verifier::CircuitSpecificState,
         SNARKMode,

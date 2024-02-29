@@ -196,8 +196,6 @@ mod tests {
     use crate::Circuit;
     use snarkvm_utilities::{TestRng, Uniform};
 
-    use anyhow::Result;
-
     pub(crate) const ITERATIONS: usize = 20;
 
     fn check_from_callback(

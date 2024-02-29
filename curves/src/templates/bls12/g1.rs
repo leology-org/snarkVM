@@ -20,9 +20,9 @@ use crate::{
     traits::AffineCurve,
 };
 use snarkvm_fields::Zero;
-use snarkvm_utilities::{serialize::*, FromBytes, ToBytes};
+use snarkvm_utilities::serialize::*;
 
-use std::io::{Read, Result as IoResult, Write};
+use std::io::Result as IoResult;
 
 pub type G1Affine<P> = Affine<<P as Bls12Parameters>::G1Parameters>;
 pub type G1Projective<P> = Projective<<P as Bls12Parameters>::G1Parameters>;

@@ -35,9 +35,6 @@ impl<E: Environment, const RATE: usize> PRF for Poseidon<E, RATE> {
 mod tests {
     use super::*;
     use snarkvm_circuit_types::environment::Circuit;
-    use snarkvm_utilities::{TestRng, Uniform};
-
-    use anyhow::Result;
 
     const DOMAIN: &str = "PoseidonCircuit0";
     const ITERATIONS: usize = 10;

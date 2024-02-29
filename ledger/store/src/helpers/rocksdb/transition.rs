@@ -14,11 +14,7 @@
 
 use crate::{
     helpers::rocksdb::{self, DataMap, Database, MapID, TransitionInputMap, TransitionMap, TransitionOutputMap},
-    InputStorage,
-    InputStore,
-    OutputStorage,
-    OutputStore,
-    TransitionStorage,
+    InputStorage, InputStore, OutputStorage, OutputStore, TransitionStorage,
 };
 use console::{
     prelude::*,

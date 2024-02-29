@@ -41,18 +41,9 @@ pub use set::*;
 
 use crate::{
     traits::{
-        CommandTrait,
-        FinalizeStoreTrait,
-        InstructionTrait,
-        RegistersLoad,
-        RegistersStore,
-        StackMatches,
-        StackProgram,
+        CommandTrait, FinalizeStoreTrait, InstructionTrait, RegistersLoad, RegistersStore, StackMatches, StackProgram,
     },
-    CastType,
-    FinalizeOperation,
-    FinalizeRegistersState,
-    Instruction,
+    CastType, FinalizeOperation, FinalizeRegistersState, Instruction,
 };
 use console::{
     network::prelude::*,

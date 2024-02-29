@@ -24,7 +24,6 @@ use console::{
 use ledger_block::Output;
 
 use aleo_std_storage::StorageMode;
-use anyhow::Result;
 use std::borrow::Cow;
 
 /// A trait for transition output storage.

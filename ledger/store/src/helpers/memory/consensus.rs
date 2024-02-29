@@ -14,9 +14,7 @@
 
 use crate::{
     helpers::memory::{BlockMemory, FinalizeMemory, TransactionMemory, TransitionMemory},
-    BlockStore,
-    ConsensusStorage,
-    FinalizeStore,
+    BlockStore, ConsensusStorage, FinalizeStore,
 };
 use console::prelude::*;
 

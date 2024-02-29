@@ -14,8 +14,6 @@
 
 use super::*;
 
-use snarkvm_utilities::DeserializeExt;
-
 impl<N: Network> Serialize for InputID<N> {
     /// Serializes the input ID into string or bytes.
     fn serialize<S: Serializer>(&self, serializer: S) -> Result<S::Ok, S::Error> {

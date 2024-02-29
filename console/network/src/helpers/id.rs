@@ -14,9 +14,6 @@
 
 use crate::prelude::*;
 
-use anyhow::Result;
-use bech32::{self, FromBase32, ToBase32};
-use serde::{de, Deserialize, Deserializer, Serialize, Serializer};
 use std::borrow::Borrow;
 
 pub trait Bech32ID<F: FieldTrait>:

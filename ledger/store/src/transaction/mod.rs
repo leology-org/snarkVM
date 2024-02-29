@@ -22,11 +22,9 @@ mod fee;
 pub use fee::*;
 
 use crate::{
-    atomic_batch_scope,
-    cow_to_copied,
+    atomic_batch_scope, cow_to_copied,
     helpers::{Map, MapRead},
-    TransitionStorage,
-    TransitionStore,
+    TransitionStorage, TransitionStore,
 };
 use console::{
     network::prelude::*,
@@ -37,7 +35,6 @@ use synthesizer_program::Program;
 use synthesizer_snark::{Certificate, VerifyingKey};
 
 use aleo_std_storage::StorageMode;
-use anyhow::Result;
 use serde::{Deserialize, Serialize};
 use std::borrow::Cow;
 

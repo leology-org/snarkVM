@@ -14,8 +14,7 @@
 
 use crate::helpers::{
     rocksdb::{MapID, RocksDB, TestMap as TestMapID},
-    Map,
-    MapRead,
+    Map, MapRead,
 };
 use console::{
     network::{Network, Testnet3},

@@ -20,11 +20,9 @@ use crate::{
 use snarkvm_fields::{Field, One, SquareRootField, Zero};
 use snarkvm_utilities::{
     bititerator::BitIteratorBE,
-    io::{Error, ErrorKind, Read, Result as IoResult, Write},
+    io::{Error, ErrorKind, Result as IoResult},
     rand::Uniform,
     serialize::*,
-    FromBytes,
-    ToBytes,
 };
 
 use core::{
@@ -72,7 +70,11 @@ impl<P: Parameters> Default for Affine<P> {
 
 impl<P: Parameters> Display for Affine<P> {
     fn fmt(&self, f: &mut Formatter<'_>) -> FmtResult {
-        if self.infinity { write!(f, "Affine(Infinity)") } else { write!(f, "Affine(x={}, y={})", self.x, self.y) }
+        if self.infinity {
+            write!(f, "Affine(Infinity)")
+        } else {
+            write!(f, "Affine(x={}, y={})", self.x, self.y)
+        }
     }
 }
 
@@ -277,7 +279,11 @@ impl<P: Parameters> Neg for Affine<P> {
 
     #[inline]
     fn neg(self) -> Self {
-        if !self.is_zero() { Self::new(self.x, -self.y, false) } else { self }
+        if !self.is_zero() {
+            Self::new(self.x, -self.y, false)
+        } else {
+            self
+        }
     }
 }
 

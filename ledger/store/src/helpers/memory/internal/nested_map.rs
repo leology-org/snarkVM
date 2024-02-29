@@ -45,10 +45,10 @@ pub struct NestedMemoryMap<
 }
 
 impl<
-    M: Copy + Clone + PartialEq + Eq + Hash + Serialize + for<'de> Deserialize<'de> + Send + Sync,
-    K: Clone + PartialEq + Eq + Serialize + for<'de> Deserialize<'de> + Send + Sync,
-    V: Clone + PartialEq + Eq + Serialize + for<'de> Deserialize<'de> + Send + Sync,
-> Default for NestedMemoryMap<M, K, V>
+        M: Copy + Clone + PartialEq + Eq + Hash + Serialize + for<'de> Deserialize<'de> + Send + Sync,
+        K: Clone + PartialEq + Eq + Serialize + for<'de> Deserialize<'de> + Send + Sync,
+        V: Clone + PartialEq + Eq + Serialize + for<'de> Deserialize<'de> + Send + Sync,
+    > Default for NestedMemoryMap<M, K, V>
 {
     fn default() -> Self {
         Self {
@@ -62,10 +62,10 @@ impl<
 }
 
 impl<
-    M: Copy + Clone + PartialEq + Eq + Hash + Serialize + for<'de> Deserialize<'de> + Send + Sync,
-    K: Clone + PartialEq + Eq + Serialize + for<'de> Deserialize<'de> + Send + Sync,
-    V: Clone + PartialEq + Eq + Serialize + for<'de> Deserialize<'de> + Send + Sync,
-> FromIterator<(M, K, V)> for NestedMemoryMap<M, K, V>
+        M: Copy + Clone + PartialEq + Eq + Hash + Serialize + for<'de> Deserialize<'de> + Send + Sync,
+        K: Clone + PartialEq + Eq + Serialize + for<'de> Deserialize<'de> + Send + Sync,
+        V: Clone + PartialEq + Eq + Serialize + for<'de> Deserialize<'de> + Send + Sync,
+    > FromIterator<(M, K, V)> for NestedMemoryMap<M, K, V>
 {
     /// Initializes a new `NestedMemoryMap` from the given iterator.
     fn from_iter<I: IntoIterator<Item = (M, K, V)>>(iter: I) -> Self {
@@ -90,11 +90,11 @@ impl<
 }
 
 impl<
-    'a,
-    M: 'a + Copy + Clone + PartialEq + Eq + Hash + Serialize + for<'de> Deserialize<'de> + Send + Sync,
-    K: 'a + Clone + PartialEq + Eq + Serialize + for<'de> Deserialize<'de> + Send + Sync,
-    V: 'a + Clone + PartialEq + Eq + Serialize + for<'de> Deserialize<'de> + Send + Sync,
-> NestedMap<'a, M, K, V> for NestedMemoryMap<M, K, V>
+        'a,
+        M: 'a + Copy + Clone + PartialEq + Eq + Hash + Serialize + for<'de> Deserialize<'de> + Send + Sync,
+        K: 'a + Clone + PartialEq + Eq + Serialize + for<'de> Deserialize<'de> + Send + Sync,
+        V: 'a + Clone + PartialEq + Eq + Serialize + for<'de> Deserialize<'de> + Send + Sync,
+    > NestedMap<'a, M, K, V> for NestedMemoryMap<M, K, V>
 {
     ///
     /// Inserts the given map-key-value pair.
@@ -235,11 +235,11 @@ impl<
 }
 
 impl<
-    'a,
-    M: 'a + Copy + Clone + PartialEq + Eq + Hash + Serialize + for<'de> Deserialize<'de> + Send + Sync,
-    K: 'a + Clone + PartialEq + Eq + Serialize + for<'de> Deserialize<'de> + Send + Sync,
-    V: 'a + Clone + PartialEq + Eq + Serialize + for<'de> Deserialize<'de> + Send + Sync,
-> NestedMapRead<'a, M, K, V> for NestedMemoryMap<M, K, V>
+        'a,
+        M: 'a + Copy + Clone + PartialEq + Eq + Hash + Serialize + for<'de> Deserialize<'de> + Send + Sync,
+        K: 'a + Clone + PartialEq + Eq + Serialize + for<'de> Deserialize<'de> + Send + Sync,
+        V: 'a + Clone + PartialEq + Eq + Serialize + for<'de> Deserialize<'de> + Send + Sync,
+    > NestedMapRead<'a, M, K, V> for NestedMemoryMap<M, K, V>
 {
     // type Iterator = core::iter::FlatMap<
     //     btree_map::IntoIter<Vec<u8>, BTreeSet<Vec<u8>>>,

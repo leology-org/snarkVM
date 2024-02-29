@@ -14,39 +14,15 @@
 
 use crate::Aleo;
 use snarkvm_circuit_algorithms::{
-    Commit,
-    CommitUncompressed,
-    Hash,
-    HashMany,
-    HashToGroup,
-    HashToScalar,
-    HashUncompressed,
-    Keccak256,
-    Keccak384,
-    Keccak512,
-    Pedersen128,
-    Pedersen64,
-    Poseidon2,
-    Poseidon4,
-    Poseidon8,
-    Sha3_256,
-    Sha3_384,
-    Sha3_512,
-    BHP1024,
-    BHP256,
-    BHP512,
-    BHP768,
+    Commit, CommitUncompressed, Hash, HashMany, HashToGroup, HashToScalar, HashUncompressed, Keccak256, Keccak384,
+    Keccak512, Pedersen128, Pedersen64, Poseidon2, Poseidon4, Poseidon8, Sha3_256, Sha3_384, Sha3_512, BHP1024, BHP256,
+    BHP512, BHP768,
 };
 use snarkvm_circuit_collections::merkle_tree::MerklePath;
 use snarkvm_circuit_types::{
     environment::{prelude::*, Assignment, Circuit, R1CS},
-    Boolean,
-    Field,
-    Group,
-    Scalar,
+    Boolean, Field, Group, Scalar,
 };
-
-use core::fmt;
 
 type E = Circuit;
 
@@ -497,7 +473,6 @@ impl Display for AleoV0 {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use snarkvm_circuit_types::Field;
 
     type CurrentAleo = AleoV0;
 

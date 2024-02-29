@@ -18,8 +18,7 @@ use crate::{
     fft::EvaluationDomain,
     snark::varuna::{
         ahp::verifier::{FirstMessage, FourthMessage, SecondMessage, ThirdMessage},
-        CircuitId,
-        SNARKMode,
+        CircuitId, SNARKMode,
     },
 };
 use snarkvm_fields::PrimeField;

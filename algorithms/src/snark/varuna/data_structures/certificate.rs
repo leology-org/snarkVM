@@ -14,13 +14,7 @@
 
 use crate::polycommit::sonic_pc;
 use snarkvm_curves::PairingEngine;
-use snarkvm_utilities::{
-    error,
-    io::{self, Read, Write},
-    serialize::*,
-    FromBytes,
-    ToBytes,
-};
+use snarkvm_utilities::{error, serialize::*};
 
 /// A certificate for the verifying key.
 #[derive(Clone, Debug, PartialEq, Eq, CanonicalSerialize, CanonicalDeserialize)]

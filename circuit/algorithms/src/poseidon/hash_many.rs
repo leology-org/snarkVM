@@ -197,8 +197,6 @@ mod tests {
     use super::*;
     use snarkvm_circuit_types::environment::Circuit;
 
-    use anyhow::Result;
-
     const DOMAIN: &str = "PoseidonCircuit0";
     const ITERATIONS: usize = 10;
     const RATE: u16 = 4;

@@ -14,8 +14,6 @@
 
 use super::*;
 
-use snarkvm_utilities::DeserializeExt;
-
 impl<N: Network> Serialize for ProgramOwner<N> {
     /// Serializes the program owner into string or bytes.
     fn serialize<S: Serializer>(&self, serializer: S) -> Result<S::Ok, S::Error> {

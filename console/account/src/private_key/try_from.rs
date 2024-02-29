@@ -13,7 +13,6 @@
 // limitations under the License.
 
 use super::*;
-use snarkvm_console_types::Field;
 
 static ACCOUNT_SK_SIG_DOMAIN: &str = "AleoAccountSignatureSecretKey0";
 static ACCOUNT_R_SIG_DOMAIN: &str = "AleoAccountSignatureRandomizer0";

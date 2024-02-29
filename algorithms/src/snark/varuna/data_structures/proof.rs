@@ -21,13 +21,7 @@ use crate::{
 use ahp::prover::{FourthMessage, ThirdMessage};
 use snarkvm_curves::PairingEngine;
 use snarkvm_fields::PrimeField;
-use snarkvm_utilities::{
-    error,
-    io::{self, Read, Write},
-    serialize::*,
-    FromBytes,
-    ToBytes,
-};
+use snarkvm_utilities::{error, serialize::*};
 
 use std::collections::BTreeMap;
 

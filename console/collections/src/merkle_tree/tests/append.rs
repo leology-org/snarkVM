@@ -590,7 +590,9 @@ fn test_profiler() -> Result<()> {
 
     /// Generates the specified number of random Merkle tree leaves.
     macro_rules! generate_leaves {
-        ($num_leaves:expr, $rng:expr) => {{ (0..$num_leaves).map(|_| Field::<CurrentEnvironment>::rand($rng).to_bits_le()).collect::<Vec<_>>() }};
+        ($num_leaves:expr, $rng:expr) => {{
+            (0..$num_leaves).map(|_| Field::<CurrentEnvironment>::rand($rng).to_bits_le()).collect::<Vec<_>>()
+        }};
     }
 
     type LH = BHP1024<CurrentEnvironment>;

@@ -32,8 +32,6 @@ use snarkvm_circuit_types_field::Field;
 use snarkvm_circuit_types_group::Group;
 use snarkvm_circuit_types_scalar::Scalar;
 
-use core::str::FromStr;
-
 #[derive(Clone)]
 pub struct Address<E: Environment>(Group<E>);
 

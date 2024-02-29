@@ -21,20 +21,12 @@ use console::{
     types::{Boolean, Field},
 };
 use ledger_block::{
-    Block,
-    ConfirmedTransaction,
-    Header,
-    Metadata,
-    Ratifications,
-    Transaction,
-    Transactions,
-    Transition,
+    Block, ConfirmedTransaction, Header, Metadata, Ratifications, Transaction, Transactions, Transition,
 };
 use ledger_store::{helpers::memory::ConsensusMemory, ConsensusStorage, ConsensusStore};
 use snarkvm_synthesizer::{program::FinalizeOperation, VM};
 use synthesizer_program::FinalizeGlobalState;
 
-use anyhow::Result;
 use console::account::Address;
 use indexmap::IndexMap;
 use rayon::prelude::*;

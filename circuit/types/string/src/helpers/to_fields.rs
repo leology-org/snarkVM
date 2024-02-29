@@ -13,7 +13,6 @@
 // limitations under the License.
 
 use super::*;
-use snarkvm_circuit_types_field::Field;
 
 impl<E: Environment> ToFields for StringType<E> {
     type Field = Field<E>;

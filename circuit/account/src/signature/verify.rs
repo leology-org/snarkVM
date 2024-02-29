@@ -48,8 +48,6 @@ pub(crate) mod tests {
     use snarkvm_circuit_types::Group;
     use snarkvm_utilities::{TestRng, Uniform};
 
-    use anyhow::Result;
-
     const ITERATIONS: u64 = 50;
 
     fn check_verify(

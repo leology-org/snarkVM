@@ -44,9 +44,9 @@ pub struct MemoryMap<
 }
 
 impl<
-    K: Copy + Clone + PartialEq + Eq + Hash + Serialize + for<'de> Deserialize<'de> + Send + Sync,
-    V: Clone + PartialEq + Eq + Serialize + for<'de> Deserialize<'de> + Send + Sync,
-> Default for MemoryMap<K, V>
+        K: Copy + Clone + PartialEq + Eq + Hash + Serialize + for<'de> Deserialize<'de> + Send + Sync,
+        V: Clone + PartialEq + Eq + Serialize + for<'de> Deserialize<'de> + Send + Sync,
+    > Default for MemoryMap<K, V>
 {
     fn default() -> Self {
         Self {
@@ -59,9 +59,9 @@ impl<
 }
 
 impl<
-    K: Copy + Clone + PartialEq + Eq + Hash + Serialize + for<'de> Deserialize<'de> + Send + Sync,
-    V: Clone + PartialEq + Eq + Serialize + for<'de> Deserialize<'de> + Send + Sync,
-> FromIterator<(K, V)> for MemoryMap<K, V>
+        K: Copy + Clone + PartialEq + Eq + Hash + Serialize + for<'de> Deserialize<'de> + Send + Sync,
+        V: Clone + PartialEq + Eq + Serialize + for<'de> Deserialize<'de> + Send + Sync,
+    > FromIterator<(K, V)> for MemoryMap<K, V>
 {
     /// Initializes a new `MemoryMap` from the given iterator.
     fn from_iter<I: IntoIterator<Item = (K, V)>>(iter: I) -> Self {
@@ -79,10 +79,10 @@ impl<
 }
 
 impl<
-    'a,
-    K: 'a + Copy + Clone + PartialEq + Eq + Hash + Serialize + for<'de> Deserialize<'de> + Send + Sync,
-    V: 'a + Clone + PartialEq + Eq + Serialize + for<'de> Deserialize<'de> + Send + Sync,
-> Map<'a, K, V> for MemoryMap<K, V>
+        'a,
+        K: 'a + Copy + Clone + PartialEq + Eq + Hash + Serialize + for<'de> Deserialize<'de> + Send + Sync,
+        V: 'a + Clone + PartialEq + Eq + Serialize + for<'de> Deserialize<'de> + Send + Sync,
+    > Map<'a, K, V> for MemoryMap<K, V>
 {
     ///
     /// Inserts the given key-value pair into the map.
@@ -231,10 +231,10 @@ impl<
 }
 
 impl<
-    'a,
-    K: 'a + Copy + Clone + PartialEq + Eq + Hash + Serialize + for<'de> Deserialize<'de> + Send + Sync,
-    V: 'a + Clone + PartialEq + Eq + Serialize + for<'de> Deserialize<'de> + Send + Sync,
-> MapRead<'a, K, V> for MemoryMap<K, V>
+        'a,
+        K: 'a + Copy + Clone + PartialEq + Eq + Hash + Serialize + for<'de> Deserialize<'de> + Send + Sync,
+        V: 'a + Clone + PartialEq + Eq + Serialize + for<'de> Deserialize<'de> + Send + Sync,
+    > MapRead<'a, K, V> for MemoryMap<K, V>
 {
     type Iterator = core::iter::Map<btree_map::IntoIter<Vec<u8>, V>, fn((Vec<u8>, V)) -> (Cow<'a, K>, Cow<'a, V>)>;
     type Keys = core::iter::Map<btree_map::IntoKeys<Vec<u8>, V>, fn(Vec<u8>) -> Cow<'a, K>>;
@@ -350,9 +350,9 @@ impl<
 }
 
 impl<
-    K: Copy + Clone + PartialEq + Eq + Hash + Serialize + for<'de> Deserialize<'de> + Send + Sync,
-    V: Clone + PartialEq + Eq + Serialize + for<'de> Deserialize<'de> + Send + Sync,
-> Deref for MemoryMap<K, V>
+        K: Copy + Clone + PartialEq + Eq + Hash + Serialize + for<'de> Deserialize<'de> + Send + Sync,
+        V: Clone + PartialEq + Eq + Serialize + for<'de> Deserialize<'de> + Send + Sync,
+    > Deref for MemoryMap<K, V>
 {
     type Target = Arc<RwLock<BTreeMap<Vec<u8>, V>>>;
 

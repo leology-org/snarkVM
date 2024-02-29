@@ -47,10 +47,10 @@ pub struct InnerDataMap<K: Serialize + DeserializeOwned, V: Serialize + Deserial
 }
 
 impl<
-    'a,
-    K: 'a + Copy + Clone + Debug + PartialEq + Eq + Hash + Serialize + DeserializeOwned + Send + Sync,
-    V: 'a + Clone + PartialEq + Eq + Serialize + DeserializeOwned + Send + Sync,
-> Map<'a, K, V> for DataMap<K, V>
+        'a,
+        K: 'a + Copy + Clone + Debug + PartialEq + Eq + Hash + Serialize + DeserializeOwned + Send + Sync,
+        V: 'a + Clone + PartialEq + Eq + Serialize + DeserializeOwned + Send + Sync,
+    > Map<'a, K, V> for DataMap<K, V>
 {
     ///
     /// Inserts the given key-value pair into the map.
@@ -232,10 +232,10 @@ impl<
 }
 
 impl<
-    'a,
-    K: 'a + Copy + Clone + Debug + PartialEq + Eq + Hash + Serialize + DeserializeOwned + Send + Sync,
-    V: 'a + Clone + PartialEq + Eq + Serialize + DeserializeOwned + Send + Sync,
-> MapRead<'a, K, V> for DataMap<K, V>
+        'a,
+        K: 'a + Copy + Clone + Debug + PartialEq + Eq + Hash + Serialize + DeserializeOwned + Send + Sync,
+        V: 'a + Clone + PartialEq + Eq + Serialize + DeserializeOwned + Send + Sync,
+    > MapRead<'a, K, V> for DataMap<K, V>
 {
     type Iterator = Iter<'a, K, V>;
     type Keys = Keys<'a, K>;
@@ -383,10 +383,10 @@ pub struct Iter<
 }
 
 impl<
-    'a,
-    K: 'a + Debug + PartialEq + Eq + Hash + Serialize + DeserializeOwned,
-    V: 'a + PartialEq + Eq + Serialize + DeserializeOwned,
-> Iter<'a, K, V>
+        'a,
+        K: 'a + Debug + PartialEq + Eq + Hash + Serialize + DeserializeOwned,
+        V: 'a + PartialEq + Eq + Serialize + DeserializeOwned,
+    > Iter<'a, K, V>
 {
     pub(super) fn new(db_iter: rocksdb::DBIterator<'a>) -> Self {
         Self { db_iter, _phantom: PhantomData }
@@ -394,10 +394,10 @@ impl<
 }
 
 impl<
-    'a,
-    K: 'a + Clone + Debug + PartialEq + Eq + Hash + Serialize + DeserializeOwned,
-    V: 'a + Clone + PartialEq + Eq + Serialize + DeserializeOwned,
-> Iterator for Iter<'a, K, V>
+        'a,
+        K: 'a + Clone + Debug + PartialEq + Eq + Hash + Serialize + DeserializeOwned,
+        V: 'a + Clone + PartialEq + Eq + Serialize + DeserializeOwned,
+    > Iterator for Iter<'a, K, V>
 {
     type Item = (Cow<'a, K>, Cow<'a, V>);
 
@@ -531,8 +531,7 @@ impl<K: Serialize + DeserializeOwned, V: Serialize + DeserializeOwned> fmt::Debu
 mod tests {
     use super::*;
     use crate::{
-        atomic_batch_scope,
-        atomic_finalize,
+        atomic_batch_scope, atomic_finalize,
         helpers::rocksdb::{internal::tests::temp_dir, MapID, TestMap},
         FinalizeMode,
     };

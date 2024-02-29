@@ -26,21 +26,8 @@ mod string;
 use console::{
     network::prelude::*,
     program::{
-        Ciphertext,
-        Identifier,
-        InputID,
-        OutputID,
-        ProgramID,
-        Record,
-        Register,
-        Request,
-        Response,
-        TransitionLeaf,
-        TransitionPath,
-        TransitionTree,
-        Value,
-        ValueType,
-        TRANSITION_DEPTH,
+        Ciphertext, Identifier, InputID, OutputID, ProgramID, Record, Register, Request, Response, TransitionLeaf,
+        TransitionPath, TransitionTree, Value, ValueType, TRANSITION_DEPTH,
     },
     types::{Field, Group},
 };

@@ -14,7 +14,7 @@
 
 use crate::{templates::short_weierstrass_jacobian, PairingEngine};
 use snarkvm_fields::{Field, PrimeField, SquareRootField, Zero};
-use snarkvm_utilities::{rand::Uniform, serialize::*, FromBytes, ToBytes};
+use snarkvm_utilities::{rand::Uniform, serialize::*};
 
 use core::{
     fmt::{Debug, Display},

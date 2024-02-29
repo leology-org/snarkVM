@@ -317,7 +317,6 @@ mod tests {
     use super::*;
     use crate::{TestRng, Uniform};
 
-    use anyhow::Result;
     use rand::{distributions::Alphanumeric, Rng};
 
     const ITERATIONS: u64 = 10000;
@@ -386,11 +385,9 @@ mod tests {
         // Vec<Vec<i128>>
         check!((0..100).map(|_| (0..128).map(|_| Uniform::rand(rng)).collect::<Vec<i128>>()).collect::<Vec<_>>());
         // Vec<Vec<String>>
-        check!(
-            (0..100)
-                .map(|_| (0..128).map(|_| random_string(rng.gen(), rng)).collect::<Vec<String>>())
-                .collect::<Vec<_>>()
-        );
+        check!((0..100)
+            .map(|_| (0..128).map(|_| random_string(rng.gen(), rng)).collect::<Vec<String>>())
+            .collect::<Vec<_>>());
     }
 
     #[test]

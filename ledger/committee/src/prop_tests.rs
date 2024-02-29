@@ -13,20 +13,15 @@
 // limitations under the License.
 
 use super::*;
-use crate::MIN_VALIDATOR_STAKE;
 use console::account::PrivateKey;
 
-use anyhow::Result;
 use proptest::{
     collection::{hash_set, SizeRange},
     prelude::{any, Arbitrary, BoxedStrategy, Just, Strategy},
     sample::size_range,
 };
 use rand::SeedableRng;
-use std::{
-    collections::HashSet,
-    hash::{Hash, Hasher},
-};
+use std::hash::{Hash, Hasher};
 use test_strategy::proptest;
 
 type CurrentNetwork = console::network::Testnet3;

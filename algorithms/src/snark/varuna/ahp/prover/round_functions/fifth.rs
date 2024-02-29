@@ -19,8 +19,7 @@ use crate::{
     polycommit::sonic_pc::{LabeledPolynomial, PolynomialInfo, PolynomialLabel},
     snark::varuna::{
         ahp::{verifier, AHPError, AHPForR1CS},
-        prover,
-        SNARKMode,
+        prover, SNARKMode,
     },
 };
 use snarkvm_fields::PrimeField;

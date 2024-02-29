@@ -78,7 +78,7 @@ mod tests {
     use super::*;
     use console::CastLossy as _;
     use console_root::{network::Testnet3, prelude::TestRng};
-    use snarkvm_circuit_types::environment::{count_is, Circuit, Eject, Inject, Mode, UpdatableCount};
+    use snarkvm_circuit_types::environment::{count_is, Circuit, UpdatableCount};
 
     use std::fmt::Debug;
 

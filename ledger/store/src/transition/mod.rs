@@ -19,9 +19,7 @@ mod output;
 pub use output::*;
 
 use crate::{
-    atomic_batch_scope,
-    cow_to_cloned,
-    cow_to_copied,
+    atomic_batch_scope, cow_to_cloned, cow_to_copied,
     helpers::{Map, MapRead},
 };
 use console::{
@@ -32,7 +30,6 @@ use console::{
 use ledger_block::{Input, Output, Transition};
 
 use aleo_std_storage::StorageMode;
-use anyhow::Result;
 use std::borrow::Cow;
 
 /// A trait for transition storage.

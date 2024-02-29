@@ -30,8 +30,6 @@ mod tests {
     use snarkvm_circuit_types::environment::Circuit;
     use snarkvm_utilities::{TestRng, Uniform};
 
-    use anyhow::Result;
-
     const ITERATIONS: u64 = 100;
     const DOMAIN: &str = "BHPCircuit0";
 

@@ -22,8 +22,6 @@ use crate::PrivateKey;
 use snarkvm_circuit_network::Aleo;
 use snarkvm_circuit_types::{environment::prelude::*, Address, Scalar};
 
-use core::ops::Deref;
-
 /// The account view key is able to decrypt records and ciphertext.
 pub struct ViewKey<A: Aleo>(Scalar<A>, OnceCell<Address<A>>);
 
@@ -64,8 +62,6 @@ impl<A: Aleo> Deref for ViewKey<A> {
 mod tests {
     use super::*;
     use crate::{helpers::generate_account, Circuit};
-
-    use anyhow::Result;
 
     const ITERATIONS: u64 = 500;
 

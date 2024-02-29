@@ -77,8 +77,6 @@ mod tests {
     use snarkvm_curves::{AffineCurve, ProjectiveCurve};
     use snarkvm_utilities::{TestRng, Uniform};
 
-    use anyhow::Result;
-
     const ITERATIONS: u64 = 100;
     const DOMAIN: &str = "BHPCircuit0";
 

@@ -29,8 +29,6 @@ use snarkvm_console_account::ViewKey;
 use snarkvm_console_network::prelude::*;
 use snarkvm_console_types::{Boolean, Field, Group};
 
-use core::ops::Deref;
-
 #[derive(Clone)]
 pub struct Ciphertext<N: Network>(Vec<Field<N>>);
 

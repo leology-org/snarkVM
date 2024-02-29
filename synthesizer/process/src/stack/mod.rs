@@ -41,25 +41,8 @@ use console::{
     account::{Address, PrivateKey},
     network::prelude::*,
     program::{
-        Argument,
-        Entry,
-        EntryType,
-        FinalizeType,
-        Future,
-        Identifier,
-        Literal,
-        Locator,
-        Owner as RecordOwner,
-        Plaintext,
-        PlaintextType,
-        ProgramID,
-        Record,
-        RecordType,
-        RegisterType,
-        Request,
-        Response,
-        Value,
-        ValueType,
+        Argument, Entry, EntryType, FinalizeType, Future, Identifier, Literal, Locator, Owner as RecordOwner,
+        Plaintext, PlaintextType, ProgramID, Record, RecordType, RegisterType, Request, Response, Value, ValueType,
     },
     types::{Field, Group},
 };
@@ -418,13 +401,13 @@ impl<N: Network> Stack<N> {
     /// Removes the proving key for the given function name.
     #[inline]
     pub fn remove_proving_key(&self, function_name: &Identifier<N>) {
-        self.proving_keys.write().remove(function_name);
+        self.proving_keys.write().swap_remove(function_name);
     }
 
     /// Removes the verifying key for the given function name.
     #[inline]
     pub fn remove_verifying_key(&self, function_name: &Identifier<N>) {
-        self.verifying_keys.write().remove(function_name);
+        self.verifying_keys.write().swap_remove(function_name);
     }
 }
 

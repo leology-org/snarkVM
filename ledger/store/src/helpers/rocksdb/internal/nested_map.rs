@@ -101,11 +101,11 @@ fn get_map_and_key(map_key: &[u8]) -> Result<(&[u8], &[u8])> {
 }
 
 impl<
-    'a,
-    M: 'a + Copy + Clone + Debug + PartialEq + Eq + Hash + Serialize + DeserializeOwned + Send + Sync,
-    K: 'a + Clone + Debug + PartialEq + Eq + Serialize + DeserializeOwned + Send + Sync,
-    V: 'a + Clone + PartialEq + Eq + Serialize + DeserializeOwned + Send + Sync,
-> NestedMap<'a, M, K, V> for NestedDataMap<M, K, V>
+        'a,
+        M: 'a + Copy + Clone + Debug + PartialEq + Eq + Hash + Serialize + DeserializeOwned + Send + Sync,
+        K: 'a + Clone + Debug + PartialEq + Eq + Serialize + DeserializeOwned + Send + Sync,
+        V: 'a + Clone + PartialEq + Eq + Serialize + DeserializeOwned + Send + Sync,
+    > NestedMap<'a, M, K, V> for NestedDataMap<M, K, V>
 {
     ///
     /// Inserts the given map-key-value pair.
@@ -338,11 +338,11 @@ impl<
 }
 
 impl<
-    'a,
-    M: 'a + Copy + Clone + Debug + PartialEq + Eq + Hash + Serialize + DeserializeOwned + Send + Sync,
-    K: 'a + Clone + Debug + PartialEq + Eq + Serialize + DeserializeOwned + Send + Sync,
-    V: 'a + Clone + PartialEq + Eq + Serialize + DeserializeOwned + Send + Sync,
-> NestedMapRead<'a, M, K, V> for NestedDataMap<M, K, V>
+        'a,
+        M: 'a + Copy + Clone + Debug + PartialEq + Eq + Hash + Serialize + DeserializeOwned + Send + Sync,
+        K: 'a + Clone + Debug + PartialEq + Eq + Serialize + DeserializeOwned + Send + Sync,
+        V: 'a + Clone + PartialEq + Eq + Serialize + DeserializeOwned + Send + Sync,
+    > NestedMapRead<'a, M, K, V> for NestedDataMap<M, K, V>
 {
     type Iterator = NestedIter<'a, M, K, V>;
     type Keys = NestedKeys<'a, M, K>;
@@ -595,11 +595,11 @@ pub struct NestedIter<
 }
 
 impl<
-    'a,
-    M: 'a + Debug + PartialEq + Eq + Hash + Serialize + DeserializeOwned,
-    K: 'a + Debug + PartialEq + Eq + Serialize + DeserializeOwned,
-    V: 'a + PartialEq + Eq + Serialize + DeserializeOwned,
-> NestedIter<'a, M, K, V>
+        'a,
+        M: 'a + Debug + PartialEq + Eq + Hash + Serialize + DeserializeOwned,
+        K: 'a + Debug + PartialEq + Eq + Serialize + DeserializeOwned,
+        V: 'a + PartialEq + Eq + Serialize + DeserializeOwned,
+    > NestedIter<'a, M, K, V>
 {
     pub(super) fn new(db_iter: rocksdb::DBIterator<'a>) -> Self {
         Self { db_iter, _phantom: PhantomData }
@@ -607,11 +607,11 @@ impl<
 }
 
 impl<
-    'a,
-    M: 'a + Clone + Debug + PartialEq + Eq + Hash + Serialize + DeserializeOwned,
-    K: 'a + Clone + Debug + PartialEq + Eq + Serialize + DeserializeOwned,
-    V: 'a + Clone + PartialEq + Eq + Serialize + DeserializeOwned,
-> Iterator for NestedIter<'a, M, K, V>
+        'a,
+        M: 'a + Clone + Debug + PartialEq + Eq + Hash + Serialize + DeserializeOwned,
+        K: 'a + Clone + Debug + PartialEq + Eq + Serialize + DeserializeOwned,
+        V: 'a + Clone + PartialEq + Eq + Serialize + DeserializeOwned,
+    > Iterator for NestedIter<'a, M, K, V>
 {
     type Item = (Cow<'a, M>, Cow<'a, K>, Cow<'a, V>);
 
@@ -664,10 +664,10 @@ pub struct NestedKeys<
 }
 
 impl<
-    'a,
-    M: 'a + Clone + Debug + PartialEq + Eq + Hash + Serialize + DeserializeOwned,
-    K: 'a + Clone + Debug + PartialEq + Eq + Serialize + DeserializeOwned,
-> NestedKeys<'a, M, K>
+        'a,
+        M: 'a + Clone + Debug + PartialEq + Eq + Hash + Serialize + DeserializeOwned,
+        K: 'a + Clone + Debug + PartialEq + Eq + Serialize + DeserializeOwned,
+    > NestedKeys<'a, M, K>
 {
     pub(crate) fn new(db_iter: rocksdb::DBIterator<'a>) -> Self {
         Self { db_iter, _phantom: PhantomData }
@@ -675,10 +675,10 @@ impl<
 }
 
 impl<
-    'a,
-    M: 'a + Clone + Debug + PartialEq + Eq + Hash + Serialize + DeserializeOwned,
-    K: 'a + Clone + Debug + PartialEq + Eq + Serialize + DeserializeOwned,
-> Iterator for NestedKeys<'a, M, K>
+        'a,
+        M: 'a + Clone + Debug + PartialEq + Eq + Hash + Serialize + DeserializeOwned,
+        K: 'a + Clone + Debug + PartialEq + Eq + Serialize + DeserializeOwned,
+    > Iterator for NestedKeys<'a, M, K>
 {
     type Item = (Cow<'a, M>, Cow<'a, K>);
 
@@ -753,8 +753,7 @@ impl<'a, V: 'a + Clone + PartialEq + Eq + Serialize + DeserializeOwned> Iterator
 mod tests {
     use super::*;
     use crate::{
-        atomic_batch_scope,
-        atomic_finalize,
+        atomic_batch_scope, atomic_finalize,
         helpers::{
             rocksdb::{internal::tests::temp_dir, MapID, TestMap},
             traits::Map,

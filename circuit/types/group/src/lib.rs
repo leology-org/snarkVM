@@ -222,8 +222,6 @@ mod tests {
     use super::*;
     use snarkvm_circuit_environment::Circuit;
 
-    use core::str::FromStr;
-
     const ITERATIONS: u64 = 128;
 
     /// Attempts to construct an affine group element from the given x-coordinate and mode.

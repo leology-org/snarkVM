@@ -17,7 +17,7 @@ use crate::{
     traits::{AffineCurve, ProjectiveCurve, TwistedEdwardsParameters as Parameters},
 };
 use snarkvm_fields::{impl_add_sub_from_field_ref, Field, One, PrimeField, Zero};
-use snarkvm_utilities::{bititerator::BitIteratorBE, rand::Uniform, serialize::*, FromBytes, ToBytes};
+use snarkvm_utilities::{bititerator::BitIteratorBE, rand::Uniform, serialize::*};
 
 use core::{
     fmt::{Display, Formatter, Result as FmtResult},
@@ -28,7 +28,7 @@ use rand::{
     distributions::{Distribution, Standard},
     Rng,
 };
-use std::io::{Read, Result as IoResult, Write};
+use std::io::Result as IoResult;
 
 #[derive(Copy, Clone, Debug)]
 pub struct Projective<P: Parameters> {

@@ -16,11 +16,11 @@
 
 use crate::fft::{EvaluationDomain, Evaluations};
 use snarkvm_fields::{Field, PrimeField};
-use snarkvm_utilities::{cfg_iter_mut, serialize::*, SerializationError};
+use snarkvm_utilities::{cfg_iter_mut, serialize::*};
 use Polynomial::*;
 
 use anyhow::{ensure, Result};
-use std::{borrow::Cow, convert::TryInto};
+use std::borrow::Cow;
 
 #[cfg(not(feature = "serial"))]
 use rayon::prelude::*;

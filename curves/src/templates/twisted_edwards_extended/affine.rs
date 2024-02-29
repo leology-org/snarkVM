@@ -18,14 +18,7 @@ use crate::{
     traits::{AffineCurve, ProjectiveCurve, TwistedEdwardsParameters as Parameters},
 };
 use snarkvm_fields::{Field, One, PrimeField, SquareRootField, Zero};
-use snarkvm_utilities::{
-    bititerator::BitIteratorBE,
-    io::{Read, Result as IoResult, Write},
-    rand::Uniform,
-    serialize::*,
-    FromBytes,
-    ToBytes,
-};
+use snarkvm_utilities::{bititerator::BitIteratorBE, io::Result as IoResult, rand::Uniform, serialize::*};
 
 use core::{
     fmt::{Display, Formatter, Result as FmtResult},
@@ -124,7 +117,11 @@ impl<P: Parameters> AffineCurve for Affine<P> {
     fn from_random_bytes(bytes: &[u8]) -> Option<Self> {
         Self::BaseField::from_random_bytes_with_flags::<EdwardsFlags>(bytes).and_then(|(x, flags)| {
             // If x is valid and is zero, then parse this point as infinity.
-            if x.is_zero() { Some(Self::zero()) } else { Self::from_x_coordinate(x, flags.is_positive()) }
+            if x.is_zero() {
+                Some(Self::zero())
+            } else {
+                Self::from_x_coordinate(x, flags.is_positive())
+            }
         })
     }
 

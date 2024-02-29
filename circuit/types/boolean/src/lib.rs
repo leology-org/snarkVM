@@ -32,8 +32,6 @@ use snarkvm_circuit_environment::{assert_count, assert_output_mode, assert_scope
 
 use snarkvm_circuit_environment::prelude::*;
 
-use core::ops::Deref;
-
 #[derive(Clone)]
 pub struct Boolean<E: Environment>(LinearCombination<E::BaseField>);
 
@@ -57,10 +55,13 @@ impl<E: Environment> Inject for Boolean<E> {
 
     /// Initializes a new instance of a boolean from a primitive boolean value.
     fn new(mode: Mode, value: Self::Primitive) -> Self {
-        let variable = E::new_variable(mode, match value {
-            true => E::BaseField::one(),
-            false => E::BaseField::zero(),
-        });
+        let variable = E::new_variable(
+            mode,
+            match value {
+                true => E::BaseField::one(),
+                false => E::BaseField::zero(),
+            },
+        );
 
         // Ensure (1 - a) * a = 0
         // `a` must be either 0 or 1.
@@ -231,14 +232,12 @@ mod tests {
 
             // Ensure `a` is either 0 or 1:
             // (1 - a) * a = 0
-            assert!(
-                std::panic::catch_unwind(|| Circuit::enforce(|| (
-                    Circuit::one() - &candidate,
-                    candidate,
-                    Circuit::zero()
-                )))
-                .is_err()
-            );
+            assert!(std::panic::catch_unwind(|| Circuit::enforce(|| (
+                Circuit::one() - &candidate,
+                candidate,
+                Circuit::zero()
+            )))
+            .is_err());
             assert_eq!(0, Circuit::num_constraints());
 
             Circuit::reset();

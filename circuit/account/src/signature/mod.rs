@@ -145,8 +145,6 @@ mod tests {
     use crate::{helpers::generate_account, Circuit};
     use snarkvm_utilities::{TestRng, Uniform};
 
-    use anyhow::Result;
-
     const ITERATIONS: u64 = 250;
 
     fn check_new(

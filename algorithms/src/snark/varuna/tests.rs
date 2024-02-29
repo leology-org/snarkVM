@@ -16,13 +16,8 @@
 mod varuna {
     use crate::{
         snark::varuna::{
-            mode::SNARKMode,
-            test_circuit::TestCircuit,
-            AHPForR1CS,
-            CircuitVerifyingKey,
-            VarunaHidingMode,
-            VarunaNonHidingMode,
-            VarunaSNARK,
+            mode::SNARKMode, test_circuit::TestCircuit, AHPForR1CS, CircuitVerifyingKey, VarunaHidingMode,
+            VarunaNonHidingMode, VarunaSNARK,
         },
         traits::{AlgebraicSponge, SNARK},
     };
@@ -300,19 +295,14 @@ mod varuna_hiding {
     use crate::{
         crypto_hash::PoseidonSponge,
         snark::varuna::{
-            ahp::AHPForR1CS,
-            test_circuit::TestCircuit,
-            CircuitVerifyingKey,
-            VarunaHidingMode,
-            VarunaSNARK,
+            ahp::AHPForR1CS, test_circuit::TestCircuit, CircuitVerifyingKey, VarunaHidingMode, VarunaSNARK,
         },
         traits::{AlgebraicSponge, SNARK},
     };
     use snarkvm_curves::bls12_377::{Bls12_377, Fq, Fr};
     use snarkvm_utilities::{
         rand::{TestRng, Uniform},
-        FromBytes,
-        ToBytes,
+        FromBytes, ToBytes,
     };
 
     use std::str::FromStr;
@@ -342,16 +332,14 @@ mod varuna_hiding {
             assert!(VarunaInst::verify(universal_verifier, &fs_parameters, &index_vk, public_inputs, &proof).unwrap());
             println!("Called verifier");
             eprintln!("\nShould not verify (i.e. verifier messages should print below):");
-            assert!(
-                !VarunaInst::verify(
-                    universal_verifier,
-                    &fs_parameters,
-                    &index_vk,
-                    [Fr::rand(rng), Fr::rand(rng)],
-                    &proof
-                )
-                .unwrap()
-            );
+            assert!(!VarunaInst::verify(
+                universal_verifier,
+                &fs_parameters,
+                &index_vk,
+                [Fr::rand(rng), Fr::rand(rng)],
+                &proof
+            )
+            .unwrap());
         }
     }
 

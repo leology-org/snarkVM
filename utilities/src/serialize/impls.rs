@@ -12,13 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-pub use crate::{
-    io::{Read, Write},
-    FromBytes,
-    ToBytes,
-    Vec,
-};
 use crate::{serialize::traits::*, SerializationError};
+pub use crate::{FromBytes, ToBytes};
 
 use bincode::Options;
 
